@@ -1148,10 +1148,20 @@
     color: rgba(255,255,255,0.55);
     font-weight: 700;
   }
+  .instituto-visual-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    z-index: 1;
+  }
   .instituto-visual .frame-corner {
     position: absolute;
     width: 30px; height: 30px;
     border: 2px solid var(--yellow);
+    z-index: 2;
   }
   .instituto-visual .fc-tl { top: 20px; left: 20px; border-right: 0; border-bottom: 0; }
   .instituto-visual .fc-tr { top: 20px; right: 20px; border-left: 0; border-bottom: 0; }
@@ -2032,14 +2042,11 @@
   <div class="container">
     <div class="instituto-grid">
       <div class="instituto-visual reveal">
+        <img src="abreu.png" alt="Instituto Abreu — Abrir caminhos através da cultura, do esporte e do conhecimento" class="instituto-visual-img" />
         <span class="frame-corner fc-tl"></span>
         <span class="frame-corner fc-tr"></span>
         <span class="frame-corner fc-bl"></span>
         <span class="frame-corner fc-br"></span>
-        <div class="instituto-visual-content">
-          <div class="logo-abreu">Instituto<br /><em>Abreu</em></div>
-          <div class="logo-sub">Ação Social · MMXXVI</div>
-        </div>
       </div>
 
       <div class="instituto-content">
@@ -2050,9 +2057,10 @@
         </h2>
         <p class="lede reveal d2">
           O Instituto Abreu é o braço social e comunitário dessa trajetória.
-          Nenhum projeto real depende de mandato, nem de período eleitoral.
-          O trabalho por São João de Meriti continua acontecendo — todos os dias,
-          o ano inteiro.
+          Nosso propósito: <strong>abrir caminhos através da cultura, do esporte
+          e do conhecimento.</strong> Nenhum projeto real depende de mandato, nem
+          de período eleitoral — o trabalho por São João de Meriti continua
+          acontecendo todos os dias, o ano inteiro.
         </p>
 
         <div class="instituto-stats reveal d2">
