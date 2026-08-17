@@ -1,0 +1,2324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dudu Padrinho — O foguete não deu ré.</title>
+<meta name="description" content="Uma decisão, um propósito e um compromisso ainda maior com São João de Meriti." />
+<meta name="theme-color" content="#061632" />
+
+<meta property="og:title" content="Dudu Padrinho — O foguete não deu ré." />
+<meta property="og:description" content="Uma decisão, um propósito e um compromisso ainda maior com São João de Meriti." />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:image" content="og-image.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Dudu Padrinho — O foguete não deu ré." />
+<meta name="twitter:description" content="Uma decisão, um propósito e um compromisso ainda maior com São João de Meriti." />
+<meta name="twitter:image" content="og-image.jpg" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23061632'/%3E%3Cg fill='%23FFD100' transform='translate(8 5) scale(0.7)'%3E%3Cpath d='M12 2l3 5h-6z'/%3E%3Crect x='9' y='7' width='6' height='12' rx='2'/%3E%3Cpath d='M9 15l-3 5h3zM15 15l3 5h-3z'/%3E%3Ccircle cx='12' cy='11' r='1.4' fill='%23061632'/%3E%3C/g%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+<style>
+  /* ============ RESET / BASE ============ */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: 'Manrope', system-ui, sans-serif;
+    font-weight: 400;
+    line-height: 1.55;
+    color: var(--ink);
+    background: var(--cream);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  img { max-width: 100%; height: auto; display: block; }
+  a { color: inherit; text-decoration: none; }
+  button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+
+  :root {
+    --navy: #0A1F44;
+    --navy-deep: #061632;
+    --navy-mid: #12305F;
+    --navy-800: #0F2954;
+    --yellow: #FFD100;
+    --yellow-warm: #FFB800;
+    --yellow-soft: #FFF3B0;
+    --cream: #F7F3EA;
+    --cream-warm: #EFE8D9;
+    --ink: #0B1220;
+    --ink-soft: #2A3243;
+    --muted: #6B7280;
+    --line: rgba(11, 18, 32, 0.12);
+    --line-strong: rgba(11, 18, 32, 0.28);
+    --line-navy: rgba(255, 255, 255, 0.15);
+
+    --f-display: 'Fraunces', 'Times New Roman', serif;
+    --f-body: 'Manrope', system-ui, sans-serif;
+
+    --max: 1360px;
+    --pad-x: clamp(20px, 5vw, 72px);
+  }
+
+  ::selection { background: var(--yellow); color: var(--navy-deep); }
+
+  /* ============ TYPOGRAPHY ============ */
+  .display {
+    font-family: var(--f-display);
+    font-variation-settings: "opsz" 144, "SOFT" 40, "wght" 500;
+    font-weight: 500;
+    line-height: 0.92;
+    letter-spacing: -0.03em;
+  }
+  .display-heavy {
+    font-family: var(--f-display);
+    font-variation-settings: "opsz" 144, "SOFT" 20, "wght" 700;
+    font-weight: 700;
+    line-height: 0.9;
+    letter-spacing: -0.035em;
+  }
+  .italic {
+    font-style: italic;
+    font-variation-settings: "opsz" 144, "SOFT" 100, "wght" 400;
+  }
+  .eyebrow {
+    font-family: var(--f-body);
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .eyebrow-yellow { color: var(--yellow-warm); }
+  .eyebrow::before {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 1px;
+    background: currentColor;
+    vertical-align: middle;
+    margin-right: 12px;
+    margin-bottom: 3px;
+  }
+
+  /* ============ CONTAINER ============ */
+  .container {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding-left: var(--pad-x);
+    padding-right: var(--pad-x);
+  }
+
+  /* ============ NAV ============ */
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 20px 0;
+    transition: background 0.4s ease, backdrop-filter 0.4s ease, padding 0.4s ease, box-shadow 0.4s ease;
+  }
+  .nav.scrolled {
+    background: rgba(6, 22, 50, 0.85);
+    backdrop-filter: saturate(140%) blur(18px);
+    -webkit-backdrop-filter: saturate(140%) blur(18px);
+    padding: 12px 0;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.06);
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    color: #fff;
+    line-height: 0;
+  }
+  .brand-logo {
+    height: 44px;
+    width: auto;
+    display: block;
+    transition: height 0.4s ease;
+  }
+  .nav.scrolled .brand-logo { height: 36px; }
+  .nav-links {
+    display: flex; gap: 32px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.75);
+    transition: color 0.2s;
+    position: relative;
+    padding: 4px 0;
+  }
+  .nav-links a:hover { color: #fff; }
+  .nav-links a::after {
+    content: ""; position: absolute;
+    left: 0; bottom: -2px;
+    width: 0; height: 1px;
+    background: var(--yellow);
+    transition: width 0.3s;
+  }
+  .nav-links a:hover::after { width: 100%; }
+
+  .nav-cta {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--yellow);
+    color: var(--navy-deep);
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+  .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(255, 209, 0, 0.35); }
+
+  .nav-toggle { display: none; color: #fff; }
+
+  /* ============ HERO ============ */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    background: var(--navy-deep);
+    color: #fff;
+    overflow: hidden;
+    padding-top: 0;
+    padding-bottom: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Poster mode (desktop) */
+  .hero-poster {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 620px;
+    max-height: 1024px;
+    display: block;
+  }
+  .hero-poster-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+  }
+  /* Invisible click zones over the baked-in CTAs */
+  .hero-poster-hit {
+    position: absolute;
+    z-index: 3;
+    display: block;
+    border-radius: 999px;
+    /* debug outline (commented for prod) */
+    /* outline: 2px dashed rgba(255,209,0,0.6); */
+    cursor: pointer;
+    transition: background 0.25s;
+  }
+  .hero-poster-hit:hover { background: rgba(255,255,255,0.05); }
+  /* Positions calibrated to a 3:2-ish landscape composition, adjust if needed */
+  .hit-primary   { left: 5.5%;  bottom: 18%; width: 22%; height: 6.5%; }
+  .hit-secondary { left: 28%;   bottom: 18%; width: 22%; height: 6.5%; }
+
+  /* Mobile hero container */
+  .hero-mobile {
+    display: none;
+    width: 100%;
+    padding-top: 130px;
+    padding-bottom: 80px;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-mobile::before {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(600px 400px at 85% 0%, rgba(18, 48, 95, 0.9), transparent 60%),
+      radial-gradient(500px 400px at 10% 100%, rgba(255, 209, 0, 0.08), transparent 60%),
+      linear-gradient(180deg, #071733 0%, #061632 60%, #04122A 100%);
+    z-index: -1;
+  }
+  /* Atmospheric background: gradients + grid + grain */
+  .hero::before {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(1000px 700px at 85% 0%, rgba(18, 48, 95, 0.9), transparent 60%),
+      radial-gradient(700px 500px at 10% 100%, rgba(255, 209, 0, 0.06), transparent 60%),
+      linear-gradient(180deg, #071733 0%, #061632 60%, #04122A 100%);
+    z-index: 0;
+  }
+  .hero::after {
+    content: "";
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 80px 80px;
+    mask-image: radial-gradient(ellipse at 60% 40%, black 30%, transparent 80%);
+    -webkit-mask-image: radial-gradient(ellipse at 60% 40%, black 30%, transparent 80%);
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .hero .container { position: relative; z-index: 2; width: 100%; }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .hero-meta {
+    display: flex; align-items: center;
+    gap: 18px;
+    margin-bottom: 32px;
+    color: rgba(255,255,255,0.6);
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .hero-meta .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--yellow);
+    box-shadow: 0 0 12px rgba(255, 209, 0, 0.6);
+    animation: pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+  .hero-meta .divider {
+    width: 40px; height: 1px; background: rgba(255,255,255,0.2);
+  }
+
+  .hero-headline {
+    font-size: clamp(48px, 8.5vw, 128px);
+    color: #fff;
+    margin-bottom: 24px;
+  }
+  .hero-headline .ré {
+    display: inline-block;
+    position: relative;
+    color: var(--yellow);
+  }
+  .hero-headline .ré::after {
+    content: "";
+    position: absolute;
+    left: -6%; right: -6%;
+    top: 52%;
+    height: 8%;
+    background: var(--yellow);
+    transform: rotate(-4deg);
+    opacity: 0.9;
+    z-index: -1;
+    border-radius: 4px;
+  }
+  .hero-headline .line-2 { display: block; }
+  .hero-headline .line-3 {
+    display: block;
+    font-style: italic;
+    font-variation-settings: "opsz" 144, "SOFT" 100, "wght" 400;
+    color: rgba(255,255,255,0.85);
+    font-size: 0.55em;
+    margin-top: 16px;
+    letter-spacing: -0.02em;
+  }
+  .hero-headline .line-3 .rocket {
+    display: inline-block;
+    color: var(--yellow);
+    margin-left: 8px;
+    animation: liftoff 4s ease-in-out infinite;
+  }
+  @keyframes liftoff {
+    0%, 100% { transform: translateY(0) rotate(-8deg); }
+    50% { transform: translateY(-6px) rotate(-6deg); }
+  }
+
+  .hero-lede {
+    max-width: 520px;
+    font-size: clamp(16px, 1.15vw, 18px);
+    line-height: 1.65;
+    color: rgba(255,255,255,0.72);
+    margin-bottom: 40px;
+    font-weight: 400;
+  }
+
+  .hero-ctas {
+    display: flex; flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 40px;
+  }
+  .btn {
+    display: inline-flex; align-items: center; gap: 12px;
+    padding: 16px 26px;
+    font-family: var(--f-body);
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: 999px;
+    transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+                box-shadow 0.25s, background 0.25s, color 0.25s, border-color 0.25s;
+    border: 1px solid transparent;
+  }
+  .btn-primary { background: var(--yellow); color: var(--navy-deep); }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 40px rgba(255, 209, 0, 0.28); }
+  .btn-ghost {
+    background: transparent;
+    color: #fff;
+    border-color: rgba(255,255,255,0.25);
+  }
+  .btn-ghost:hover { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.5); }
+
+  .btn .arrow {
+    display: inline-block; transition: transform 0.25s;
+  }
+  .btn:hover .arrow { transform: translateX(4px); }
+
+  .hero-ledger {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 40px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+  }
+  .hero-ledger div span {
+    display: block;
+    font-family: var(--f-display);
+    font-weight: 600;
+    font-size: 28px;
+    color: var(--yellow);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .hero-ledger div small {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+  }
+
+  /* Hero visual */
+  .hero-visual {
+    position: relative;
+    aspect-ratio: 4/5;
+    max-width: 520px;
+    margin-left: auto;
+    width: 100%;
+  }
+  .hero-visual .portrait-frame {
+    position: absolute;
+    inset: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #0a1f44;
+    box-shadow:
+      0 40px 80px -20px rgba(0,0,0,0.6),
+      0 0 0 1px rgba(255,255,255,0.08);
+  }
+  .hero-visual .portrait-frame img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  /* Yellow badge */
+  .hero-badge {
+    position: absolute;
+    bottom: -30px; left: -30px;
+    width: 140px; height: 140px;
+    border-radius: 50%;
+    background: var(--yellow);
+    color: var(--navy-deep);
+    display: grid; place-items: center;
+    text-align: center;
+    z-index: 3;
+    animation: rotate 20s linear infinite;
+  }
+  @keyframes rotate {
+    to { transform: rotate(360deg); }
+  }
+  .hero-badge svg { width: 100%; height: 100%; }
+  .hero-badge-inner {
+    position: absolute;
+    inset: 0;
+    display: grid; place-items: center;
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: 34px;
+    animation: rotate 20s linear infinite reverse;
+  }
+  /* Year sticker */
+  .hero-year {
+    position: absolute;
+    top: -20px; right: -20px;
+    background: var(--navy-deep);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 4px;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1;
+    gap: 4px;
+  }
+  .hero-year .n {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: 32px;
+    color: var(--yellow);
+  }
+  .hero-year .l {
+    font-size: 9px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+  }
+
+  /* Trajectory line motif on left */
+  .trajectory {
+    position: absolute;
+    left: 32px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(180deg, transparent, rgba(255,255,255,0.15) 20%, rgba(255,255,255,0.15) 80%, transparent);
+    z-index: 1;
+  }
+  .trajectory::before {
+    content: "";
+    position: absolute;
+    left: -3px;
+    top: 30%;
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--yellow);
+    box-shadow: 0 0 20px rgba(255,209,0,0.8);
+    animation: trace 8s ease-in-out infinite;
+  }
+  @keyframes trace {
+    0% { top: 90%; opacity: 0.2; }
+    50% { top: 15%; opacity: 1; }
+    100% { top: 10%; opacity: 0; }
+  }
+  .trajectory-label {
+    position: absolute;
+    left: -34px;
+    bottom: 40px;
+    transform: rotate(-90deg);
+    transform-origin: left bottom;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  /* Scroll indicator */
+  .scroll-cue {
+    position: absolute;
+    bottom: 24px; left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex; flex-direction: column;
+    align-items: center; gap: 10px;
+    color: rgba(255,255,255,0.55);
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .scroll-cue .track {
+    width: 1px; height: 40px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.4), transparent);
+    position: relative; overflow: hidden;
+  }
+  .scroll-cue .track::after {
+    content: ""; position: absolute;
+    left: 0; top: -30%;
+    width: 100%; height: 30%;
+    background: var(--yellow);
+    animation: cue 2s ease-in-out infinite;
+  }
+  @keyframes cue {
+    0% { top: -30%; }
+    100% { top: 130%; }
+  }
+
+  /* ============ SECTION BASE ============ */
+  section { position: relative; }
+
+  .sec-cream {
+    background: var(--cream);
+    color: var(--ink);
+    padding: clamp(80px, 12vw, 160px) 0;
+  }
+
+  .sec-navy {
+    background: var(--navy-deep);
+    color: #fff;
+    padding: clamp(80px, 12vw, 160px) 0;
+    overflow: hidden;
+  }
+
+  /* ============ SECTION 2: PROPÓSITO ============ */
+  .proposito {
+    background: var(--cream);
+    padding: clamp(100px, 14vw, 180px) 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .proposito::before {
+    content: "";
+    position: absolute;
+    top: -40px; right: -80px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(255,209,0,0.15), transparent 65%);
+    z-index: 0;
+  }
+  .proposito .container { position: relative; z-index: 1; }
+
+  .proposito-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: start;
+  }
+  .proposito-headline {
+    font-size: clamp(44px, 6vw, 92px);
+    color: var(--navy-deep);
+    position: sticky;
+    top: 120px;
+  }
+  .proposito-headline .fwd {
+    display: block;
+    font-style: italic;
+    font-variation-settings: "opsz" 144, "SOFT" 100, "wght" 400;
+    color: var(--yellow-warm);
+    margin-top: 12px;
+  }
+  .proposito-headline .arrow-down {
+    display: inline-block;
+    color: var(--yellow-warm);
+    transform: rotate(90deg);
+    margin-right: 8px;
+    font-size: 0.5em;
+    vertical-align: middle;
+    opacity: 0.6;
+  }
+
+  .proposito-body p {
+    font-size: 18px;
+    line-height: 1.75;
+    color: var(--ink-soft);
+    margin-bottom: 26px;
+  }
+  .proposito-body p:first-child::first-letter {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: 5.2em;
+    float: left;
+    line-height: 0.85;
+    margin: 8px 12px -8px 0;
+    color: var(--navy-deep);
+  }
+  .proposito-body strong {
+    color: var(--navy-deep);
+    font-weight: 700;
+  }
+  .proposito-body .callout {
+    display: block;
+    margin-top: 40px;
+    padding-top: 32px;
+    border-top: 2px solid var(--navy-deep);
+    font-family: var(--f-display);
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 1.3;
+    color: var(--navy-deep);
+    letter-spacing: -0.01em;
+  }
+  .proposito-body .callout span {
+    color: var(--yellow-warm);
+    font-style: italic;
+  }
+
+  /* ============ SECTION 3: QUOTE ============ */
+  .quote-sec {
+    background: var(--navy-deep);
+    color: #fff;
+    padding: clamp(100px, 14vw, 180px) 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .quote-sec::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(600px 400px at 20% 30%, rgba(18, 48, 95, 0.8), transparent 60%),
+      radial-gradient(500px 400px at 80% 80%, rgba(255, 209, 0, 0.04), transparent 60%);
+  }
+  .quote-sec::after {
+    content: "";
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 80px 80px;
+    mask-image: radial-gradient(ellipse at 50% 50%, black 30%, transparent 80%);
+    -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 30%, transparent 80%);
+  }
+  .quote-inner {
+    position: relative; z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  .quote-mark {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: 200px;
+    line-height: 0.7;
+    color: var(--yellow);
+    margin-bottom: -30px;
+    display: block;
+  }
+  .quote-text {
+    font-family: var(--f-display);
+    font-weight: 400;
+    font-style: italic;
+    font-variation-settings: "opsz" 144, "SOFT" 100, "wght" 400;
+    font-size: clamp(32px, 4.5vw, 64px);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: #fff;
+    margin-bottom: 40px;
+  }
+  .quote-text em {
+    color: var(--yellow);
+    font-style: italic;
+  }
+  .quote-attrib {
+    display: flex; align-items: center; gap: 20px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+  }
+  .quote-attrib .who {
+    font-family: var(--f-display);
+    font-weight: 600;
+    font-size: 20px;
+    color: #fff;
+  }
+  .quote-attrib .role {
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    font-weight: 600;
+  }
+  .quote-sub {
+    font-family: var(--f-body);
+    font-size: 18px;
+    color: rgba(255,255,255,0.7);
+    max-width: 640px;
+    line-height: 1.6;
+  }
+
+  /* ============ SECTION 4: CANDIDATOS ============ */
+  .apoios {
+    background: var(--cream);
+    padding: clamp(100px, 14vw, 180px) 0;
+    position: relative;
+  }
+
+  .apoios-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 40px;
+    margin-bottom: 80px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--line-strong);
+  }
+  .apoios-header .headline {
+    font-size: clamp(42px, 6vw, 84px);
+    color: var(--navy-deep);
+    max-width: 800px;
+  }
+  .apoios-header .headline em {
+    font-style: italic;
+    color: var(--yellow-warm);
+    font-variation-settings: "opsz" 144, "SOFT" 100, "wght" 400;
+  }
+  .apoios-header .counter {
+    text-align: right;
+    color: var(--muted);
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding-bottom: 12px;
+  }
+  .apoios-header .counter b {
+    display: block;
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: 64px;
+    color: var(--navy-deep);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .candidates {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+  .candidate {
+    background: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 6px rgba(11, 18, 32, 0.04);
+    border: 1px solid var(--line);
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s;
+  }
+  .candidate:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 30px 80px -30px rgba(11, 18, 32, 0.35);
+  }
+  .candidate-header {
+    padding: 24px 28px;
+    background: var(--navy-deep);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .candidate-header .cargo {
+    font-family: var(--f-body);
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--yellow);
+  }
+  .candidate-header .num {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: 20px;
+    color: #fff;
+    letter-spacing: -0.02em;
+  }
+  .candidate-header .num small {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    font-family: var(--f-body);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 2px;
+  }
+  .candidate-photo {
+    aspect-ratio: 4/5;
+    background: linear-gradient(135deg, #12305F, #061632);
+    position: relative;
+    display: grid;
+    place-items: center;
+    color: rgba(255,255,255,0.35);
+    font-size: 12px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    overflow: hidden;
+  }
+  .candidate-photo::before {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(circle at 50% 60%, rgba(255,255,255,0.12), transparent 60%),
+      linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.3) 100%);
+  }
+  .candidate-photo svg.photo-fallback { position: relative; z-index: 1; opacity: 0.4; }
+  .candidate-photo .photo-label { position: relative; z-index: 1; margin-top: 12px; }
+  .candidate-photo img {
+    position: absolute;
+    inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    z-index: 2;
+  }
+  .candidate-photo.has-photo .photo-fallback,
+  .candidate-photo.has-photo .photo-label { display: none; }
+  .candidate-photo.has-photo::before { display: none; }
+  .candidate-body {
+    padding: 32px 28px 36px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .candidate-name {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.05;
+    color: var(--navy-deep);
+    margin-bottom: 6px;
+    letter-spacing: -0.02em;
+  }
+  .candidate-partido {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 700;
+    margin-bottom: 24px;
+  }
+  .candidate-quote {
+    font-family: var(--f-display);
+    font-style: italic;
+    font-variation-settings: "opsz" 144, "SOFT" 100, "wght" 400;
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    padding-left: 20px;
+    border-left: 3px solid var(--yellow);
+    margin-bottom: 24px;
+  }
+  .candidate-list {
+    list-style: none;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    margin-top: auto;
+  }
+  .candidate-list li {
+    display: flex; gap: 12px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--line);
+  }
+  .candidate-list li:last-child { border-bottom: 0; }
+  .candidate-list li::before {
+    content: "→";
+    color: var(--yellow-warm);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .candidate-list-title {
+    font-size: 10px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .apoios-quote {
+    margin-top: 100px;
+    padding-top: 80px;
+    border-top: 1px solid var(--line-strong);
+    text-align: center;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .apoios-quote h3 {
+    font-family: var(--f-display);
+    font-weight: 500;
+    font-size: clamp(32px, 4.5vw, 60px);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--navy-deep);
+    margin-bottom: 24px;
+  }
+  .apoios-quote h3 em {
+    font-style: italic;
+    color: var(--yellow-warm);
+    font-variation-settings: "opsz" 144, "SOFT" 100, "wght" 400;
+  }
+  .apoios-quote p {
+    font-size: 18px;
+    color: var(--ink-soft);
+    max-width: 620px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* ============ SECTION 5: COMPROMISSOS ============ */
+  .compromissos {
+    background: var(--cream-warm);
+    padding: clamp(100px, 14vw, 180px) 0;
+    position: relative;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .compromissos-header {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 60px;
+    align-items: end;
+    margin-bottom: 60px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--line-strong);
+  }
+  .compromissos-header h2 {
+    font-family: var(--f-display);
+    font-weight: 600;
+    font-size: clamp(40px, 5.5vw, 76px);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--navy-deep);
+  }
+  .compromissos-header h2 em {
+    font-style: italic;
+    font-variation-settings: "opsz" 144, "SOFT" 100, "wght" 400;
+    color: var(--yellow-warm);
+    display: block;
+  }
+  .compromissos-header p {
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    max-width: 500px;
+    margin-left: auto;
+  }
+
+  .themes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--line-strong);
+    border-left: 1px solid var(--line-strong);
+  }
+  .theme {
+    padding: 40px 32px;
+    border-right: 1px solid var(--line-strong);
+    border-bottom: 1px solid var(--line-strong);
+    background: transparent;
+    position: relative;
+    transition: background 0.3s;
+    cursor: default;
+  }
+  .theme:hover { background: rgba(255, 209, 0, 0.08); }
+  .theme-num {
+    font-family: var(--f-display);
+    font-weight: 500;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.16em;
+    margin-bottom: 24px;
+    display: block;
+  }
+  .theme-icon {
+    width: 48px; height: 48px;
+    margin-bottom: 24px;
+    color: var(--navy-deep);
+  }
+  .theme-icon svg { width: 100%; height: 100%; }
+  .theme h4 {
+    font-family: var(--f-display);
+    font-weight: 600;
+    font-size: 26px;
+    color: var(--navy-deep);
+    margin-bottom: 10px;
+    letter-spacing: -0.02em;
+  }
+  .theme p {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+  .theme::after {
+    content: "";
+    position: absolute;
+    bottom: 0; left: 0;
+    height: 3px; width: 0;
+    background: var(--yellow);
+    transition: width 0.4s;
+  }
+  .theme:hover::after { width: 100%; }
+
+  /* ============ SECTION 6: INSTITUTO ABREU ============ */
+  .instituto {
+    background: var(--cream);
+    padding: clamp(100px, 14vw, 180px) 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .instituto::before {
+    content: "";
+    position: absolute;
+    top: 60px; left: -100px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(18, 48, 95, 0.06), transparent 65%);
+  }
+
+  .instituto-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .instituto-visual {
+    position: relative;
+    aspect-ratio: 4/5;
+    background: linear-gradient(135deg, var(--navy-mid), var(--navy-deep));
+    border-radius: 6px;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    color: rgba(255,255,255,0.5);
+  }
+  .instituto-visual::before {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(400px 300px at 30% 20%, rgba(255,209,0,0.15), transparent 60%),
+      radial-gradient(400px 300px at 80% 80%, rgba(18,48,95,0.8), transparent 60%);
+  }
+  .instituto-visual::after {
+    content: "";
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .instituto-visual-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: rgba(255,255,255,0.85);
+    padding: 40px;
+  }
+  .instituto-visual-content .logo-abreu {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: 48px;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    color: #fff;
+    margin-bottom: 12px;
+  }
+  .instituto-visual-content .logo-abreu em {
+    font-style: italic;
+    color: var(--yellow);
+    font-variation-settings: "opsz" 144, "SOFT" 100, "wght" 400;
+  }
+  .instituto-visual-content .logo-sub {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    font-weight: 700;
+  }
+  .instituto-visual .frame-corner {
+    position: absolute;
+    width: 30px; height: 30px;
+    border: 2px solid var(--yellow);
+  }
+  .instituto-visual .fc-tl { top: 20px; left: 20px; border-right: 0; border-bottom: 0; }
+  .instituto-visual .fc-tr { top: 20px; right: 20px; border-left: 0; border-bottom: 0; }
+  .instituto-visual .fc-bl { bottom: 20px; left: 20px; border-right: 0; border-top: 0; }
+  .instituto-visual .fc-br { bottom: 20px; right: 20px; border-left: 0; border-top: 0; }
+
+  .instituto-content .eyebrow { margin-bottom: 20px; display: block; }
+  .instituto-content h2 {
+    font-family: var(--f-display);
+    font-weight: 600;
+    font-size: clamp(40px, 5vw, 68px);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--navy-deep);
+    margin-bottom: 12px;
+  }
+  .instituto-content h2 em {
+    display: block;
+    font-style: italic;
+    color: var(--yellow-warm);
+    font-variation-settings: "opsz" 144, "SOFT" 100, "wght" 400;
+  }
+  .instituto-content .lede {
+    font-size: 18px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    margin: 28px 0 40px;
+  }
+
+  .instituto-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    padding: 28px 0;
+    margin-bottom: 32px;
+    border-top: 1px solid var(--line-strong);
+    border-bottom: 1px solid var(--line-strong);
+  }
+  .instituto-stats div .n {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: 40px;
+    color: var(--navy-deep);
+    line-height: 1;
+    display: block;
+    margin-bottom: 6px;
+    letter-spacing: -0.02em;
+  }
+  .instituto-stats div .n small {
+    font-size: 20px;
+    color: var(--yellow-warm);
+    font-weight: 700;
+  }
+  .instituto-stats div .l {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 700;
+  }
+
+  .btn-dark {
+    background: var(--navy-deep);
+    color: #fff;
+  }
+  .btn-dark:hover {
+    background: var(--yellow);
+    color: var(--navy-deep);
+    transform: translateY(-2px);
+  }
+
+  .instituto-actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .instituto-phone {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 4px;
+    color: var(--navy-deep);
+    transition: transform 0.25s;
+  }
+  .instituto-phone:hover { transform: translateX(3px); }
+  .instituto-phone .ph-icon {
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    background: var(--yellow);
+    display: grid; place-items: center;
+    color: var(--navy-deep);
+    flex-shrink: 0;
+  }
+  .instituto-phone .ph-icon svg { width: 18px; height: 18px; }
+  .instituto-phone small {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 700;
+    margin-bottom: 2px;
+  }
+  .instituto-phone strong {
+    display: block;
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--navy-deep);
+    letter-spacing: -0.01em;
+    line-height: 1;
+  }
+
+  /* ============ SECTION 7: 2028 ============ */
+  .futuro {
+    background: var(--navy-deep);
+    color: #fff;
+    padding: clamp(120px, 16vw, 200px) 0;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+  .futuro::before {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(800px 500px at 50% 100%, rgba(255,209,0,0.12), transparent 60%),
+      radial-gradient(600px 400px at 50% 0%, rgba(18,48,95,0.5), transparent 60%);
+  }
+  .futuro::after {
+    content: "";
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 80px 80px;
+    mask-image: radial-gradient(ellipse at 50% 50%, black 20%, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 20%, transparent 70%);
+  }
+
+  .futuro-year {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: clamp(200px, 40vw, 560px);
+    line-height: 0.85;
+    letter-spacing: -0.05em;
+    background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255,255,255,0.18);
+    text-align: center;
+    margin-bottom: -0.4em;
+    position: relative;
+    z-index: 0;
+    user-select: none;
+  }
+
+  .futuro-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .futuro h2 {
+    font-family: var(--f-display);
+    font-weight: 600;
+    font-size: clamp(44px, 6.5vw, 96px);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: #fff;
+    margin-bottom: 24px;
+  }
+  .futuro h2 em {
+    font-style: italic;
+    color: var(--yellow);
+    font-variation-settings: "opsz" 144, "SOFT" 100, "wght" 400;
+  }
+  .futuro .sub {
+    font-size: 20px;
+    color: rgba(255,255,255,0.7);
+    max-width: 600px;
+    margin: 0 auto 60px;
+    line-height: 1.5;
+  }
+  .futuro .final {
+    font-family: var(--f-display);
+    font-style: italic;
+    font-variation-settings: "opsz" 144, "SOFT" 100, "wght" 400;
+    font-size: clamp(24px, 3vw, 40px);
+    line-height: 1.3;
+    color: var(--yellow);
+    max-width: 700px;
+    margin: 0 auto;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+  }
+  .futuro .final .rocket {
+    display: inline-block;
+    animation: liftoff 3s ease-in-out infinite;
+  }
+  .futuro .marker {
+    margin-top: 60px;
+    display: inline-block;
+    padding: 12px 28px;
+    border: 1px solid rgba(255,209,0,0.4);
+    color: var(--yellow);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    border-radius: 999px;
+  }
+
+  /* ============ SECTION 8: CONTATO ============ */
+  .contato {
+    background: var(--cream);
+    padding: clamp(100px, 14vw, 180px) 0;
+  }
+  .contato-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .contato-intro .eyebrow { margin-bottom: 24px; display: block; }
+  .contato-intro h2 {
+    font-family: var(--f-display);
+    font-weight: 500;
+    font-size: clamp(40px, 5.5vw, 72px);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--navy-deep);
+    margin-bottom: 24px;
+  }
+  .contato-intro h2 em {
+    font-style: italic;
+    color: var(--yellow-warm);
+    font-variation-settings: "opsz" 144, "SOFT" 100, "wght" 400;
+  }
+  .contato-intro p {
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    margin-bottom: 40px;
+  }
+  .contato-social {
+    display: flex; flex-direction: column;
+    gap: 16px;
+  }
+  .contato-social a {
+    display: flex; align-items: center; gap: 16px;
+    padding: 18px 22px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+  }
+  .contato-social a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px -10px rgba(11, 18, 32, 0.15);
+    border-color: var(--yellow);
+  }
+  .contato-social .icon {
+    width: 44px; height: 44px;
+    background: var(--navy-deep);
+    color: var(--yellow);
+    display: grid; place-items: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .contato-social .icon svg { width: 20px; height: 20px; }
+  .contato-social .txt {
+    flex: 1;
+  }
+  .contato-social .txt strong {
+    display: block;
+    font-family: var(--f-display);
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--navy-deep);
+    margin-bottom: 2px;
+    letter-spacing: -0.01em;
+  }
+  .contato-social .txt small {
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 700;
+  }
+  .contato-social .arrow-icon {
+    color: var(--muted);
+    transition: color 0.25s, transform 0.25s;
+  }
+  .contato-social a:hover .arrow-icon {
+    color: var(--yellow-warm);
+    transform: translate(4px, -4px);
+  }
+
+  /* Form */
+  .contato-form {
+    background: #fff;
+    padding: 48px;
+    border-radius: 4px;
+    border: 1px solid var(--line);
+    position: relative;
+  }
+  .contato-form .badge {
+    position: absolute;
+    top: -12px; left: 40px;
+    background: var(--yellow);
+    color: var(--navy-deep);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .field {
+    display: flex; flex-direction: column;
+    gap: 8px;
+  }
+  .field.full { grid-column: 1 / -1; }
+  .field label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .field input,
+  .field textarea {
+    font-family: var(--f-body);
+    font-size: 16px;
+    padding: 14px 0;
+    border: none;
+    border-bottom: 1px solid var(--line-strong);
+    background: transparent;
+    color: var(--navy-deep);
+    outline: none;
+    transition: border-color 0.25s;
+  }
+  .field input:focus,
+  .field textarea:focus {
+    border-color: var(--navy-deep);
+  }
+  .field textarea {
+    resize: vertical;
+    min-height: 100px;
+    line-height: 1.6;
+  }
+  .form-submit {
+    grid-column: 1 / -1;
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+  .form-submit .privacy {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  /* ============ FOOTER ============ */
+  .footer {
+    background: var(--navy-deep);
+    color: rgba(255,255,255,0.7);
+    padding: 80px 0 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .footer::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 80px 80px;
+    mask-image: linear-gradient(180deg, transparent, black 50%);
+    -webkit-mask-image: linear-gradient(180deg, transparent, black 50%);
+  }
+  .footer .container { position: relative; z-index: 1; }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 60px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 40px;
+  }
+  .footer-brand .brand-name { color: #fff; font-size: 28px; margin-bottom: 4px; }
+  .footer-brand .brand-sub { font-size: 12px; }
+  .footer-brand p {
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.55);
+    max-width: 320px;
+  }
+  .footer h5 {
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--yellow);
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  .footer ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .footer ul a {
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+    transition: color 0.2s;
+  }
+  .footer ul a:hover { color: var(--yellow); }
+
+  .footer-bottom {
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 24px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    font-size: 12px;
+    color: rgba(255,255,255,0.45);
+  }
+  .footer-legal {
+    max-width: 700px;
+    line-height: 1.6;
+  }
+
+  /* Massive footer wordmark */
+  .footer-wordmark {
+    text-align: center;
+    padding: 40px 0 20px;
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: clamp(80px, 15vw, 200px);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255,255,255,0.14);
+    user-select: none;
+  }
+  .footer-wordmark em {
+    font-style: italic;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255,209,0,0.5);
+    font-variation-settings: "opsz" 144, "SOFT" 100, "wght" 400;
+  }
+
+  /* ============ REVEAL ANIMATIONS ============ */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+  .reveal.d1 { transition-delay: 0.1s; }
+  .reveal.d2 { transition-delay: 0.2s; }
+  .reveal.d3 { transition-delay: 0.3s; }
+  .reveal.d4 { transition-delay: 0.4s; }
+
+  /* Grain overlay */
+  .grain {
+    position: fixed; inset: 0;
+    pointer-events: none;
+    z-index: 999;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    mix-blend-mode: overlay;
+  }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 1024px) {
+    .hero-poster { display: none; }
+    .hero-mobile { display: block; }
+    .hero .scroll-cue { display: none; }
+    .proposito-grid { grid-template-columns: 1fr; gap: 60px; }
+    .proposito-headline { position: static; }
+    .apoios-header { grid-template-columns: 1fr; align-items: start; }
+    .apoios-header .counter { text-align: left; }
+    .candidates { grid-template-columns: 1fr; }
+    .compromissos-header { grid-template-columns: 1fr; }
+    .compromissos-header p { margin-left: 0; }
+    .themes { grid-template-columns: repeat(2, 1fr); }
+    .instituto-grid { grid-template-columns: 1fr; gap: 60px; }
+    .instituto-visual { max-width: 500px; margin: 0 auto; }
+    .contato-grid { grid-template-columns: 1fr; gap: 60px; }
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+  }
+
+  @media (max-width: 768px) {
+    :root { --pad-x: 20px; }
+    .nav-links { display: none; }
+    .nav-toggle { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.1); }
+    .nav.scrolled .nav-toggle { background: rgba(255,255,255,0.08); }
+    .brand-logo { height: 34px; }
+    .nav.scrolled .brand-logo { height: 30px; }
+    .hero { padding-top: 100px; }
+    .hero-ledger { grid-template-columns: 1fr 1fr; gap: 20px; }
+    .hero-badge { width: 100px; height: 100px; bottom: -20px; left: -20px; }
+    .hero-badge-inner { font-size: 24px; }
+    .hero-year { padding: 8px 14px; top: -14px; right: -14px; }
+    .hero-year .n { font-size: 22px; }
+    .hero-year .l { font-size: 8px; }
+    .trajectory { display: none; }
+    .quote-mark { font-size: 120px; margin-bottom: -20px; }
+    .themes { grid-template-columns: 1fr; }
+    .instituto-stats { grid-template-columns: 1fr; gap: 16px; }
+    .form-grid { grid-template-columns: 1fr; }
+    .contato-form { padding: 32px 24px; }
+    .form-submit { flex-direction: column; align-items: stretch; }
+    .form-submit .btn { justify-content: center; }
+    .footer-top { grid-template-columns: 1fr; gap: 40px; padding-bottom: 40px; }
+    .footer-bottom { flex-direction: column; align-items: flex-start; text-align: left; }
+    .footer-wordmark { font-size: 60px; }
+    .hero-ctas { flex-direction: column; align-items: flex-start; }
+    .hero-ctas .btn { width: 100%; justify-content: space-between; }
+    .btn { padding: 14px 22px; font-size: 12px; }
+  }
+
+  @media (max-width: 480px) {
+    .hero-ledger { grid-template-columns: 1fr; padding-top: 24px; }
+    .hero-headline .line-3 { font-size: 0.5em; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+    html { scroll-behavior: auto; }
+    .reveal { opacity: 1; transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="#top" class="brand" aria-label="Dudu Padrinho — Tropa do Foguete não tem ré">
+      <img src="logo.png" alt="Dudu Padrinho" class="brand-logo" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="#proposito">O Propósito</a></li>
+      <li><a href="#apoios">Nossos Apoios</a></li>
+      <li><a href="#instituto">Instituto Abreu</a></li>
+      <li><a href="#futuro">2028</a></li>
+      <li><a href="#contato">Fale Conosco</a></li>
+    </ul>
+    <a href="https://instagram.com/dudupadrinho" target="_blank" rel="noopener" class="nav-cta">
+      @dudupadrinho
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+    </a>
+    <button class="nav-toggle" aria-label="Menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- ============ HERO (POSTER MODE) ============ -->
+<header class="hero hero--poster" id="top">
+
+  <!-- Desktop / tablet-landscape: full-bleed poster with baked-in headline + CTAs -->
+  <div class="hero-poster">
+    <img src="hero.png" alt="O foguete não deu ré — Ele vai decolar na hora certa. Dudu Padrinho." class="hero-poster-img" onerror="document.querySelector('.hero-poster').style.display='none';document.querySelector('.hero-mobile').style.display='block';document.querySelector('.hero .scroll-cue').style.display='none';" />
+
+    <!-- Invisible clickable overlays positioned over the baked-in CTAs -->
+    <a href="#proposito" class="hero-poster-hit hit-primary" aria-label="Entenda essa decisão"></a>
+    <a href="#apoios" class="hero-poster-hit hit-secondary" aria-label="Conheça quem Dudu apoia"></a>
+  </div>
+
+  <!-- Mobile fallback: HTML hero (poster doesn't work well in portrait) -->
+  <div class="hero-mobile">
+    <div class="container">
+      <div class="hero-meta reveal">
+        <span class="dot"></span>
+        <span>Comunicado Oficial</span>
+        <span class="divider"></span>
+        <span>Agosto · 2026</span>
+      </div>
+
+      <h1 class="hero-headline display-heavy reveal d1">
+        O foguete
+        <span class="line-2">não deu <span class="ré">ré.</span></span>
+        <span class="line-3 italic">Ele vai decolar<br />na hora certa. <span class="rocket">🚀</span></span>
+      </h1>
+
+      <p class="hero-lede reveal d2">
+        Tem momentos em que avançar também significa saber esperar. Dudu Padrinho
+        escolheu transformar sua força política em resultados concretos para
+        São João de Meriti.
+      </p>
+
+      <div class="hero-ctas reveal d3">
+        <a href="#proposito" class="btn btn-primary">
+          Entenda essa decisão
+          <span class="arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+        <a href="#apoios" class="btn btn-ghost">
+          Quem Dudu apoia
+          <span class="arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-cue">
+    <span>Role para baixo</span>
+    <div class="track"></div>
+  </div>
+</header>
+
+<!-- ============ SECTION: PROPÓSITO ============ -->
+<section class="proposito" id="proposito">
+  <div class="container">
+    <div class="proposito-grid">
+      <div>
+        <span class="eyebrow reveal">O Propósito</span>
+        <h2 class="proposito-headline display reveal d1" style="margin-top: 24px;">
+          Dois passos<br />
+          para trás.
+          <span class="fwd">Quatro para frente.</span>
+        </h2>
+      </div>
+
+      <div class="proposito-body">
+        <p class="reveal">
+          Dudu iniciou um projeto para disputar uma vaga como Deputado Federal.
+          Percorreu São João de Meriti de ponta a ponta, conversou com pessoas
+          nas ruas, escutou lideranças comunitárias e testemunhou de perto a força
+          que o projeto conquistou junto à cidade.
+        </p>
+        <p class="reveal d1">
+          Mas política também exige maturidade para reconhecer o momento certo.
+          Em vez de transformar o projeto em uma candidatura apenas por vaidade
+          ou interesse pessoal, Dudu decidiu <strong>utilizar sua força política
+          para ajudar a eleger representantes mais competitivos</strong> — e construir
+          com eles um compromisso verdadeiro e verificável com São João de Meriti.
+        </p>
+        <p class="reveal d2">
+          Não é o fim de um projeto. É parte de uma estratégia maior.
+          Uma decisão que coloca a cidade acima de qualquer candidatura pessoal.
+        </p>
+
+        <div class="callout reveal d3">
+          <strong>2026 é construção.</strong><br />
+          <span>2028 é o próximo grande capítulo.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION: QUOTE TRANSITION ============ -->
+<section class="quote-sec">
+  <div class="container">
+    <div class="quote-inner">
+      <span class="quote-mark reveal">"</span>
+      <blockquote class="quote-text reveal d1">
+        Se eu não estiver lá agora, <em>quero ajudar a colocar lá</em> quem vai
+        olhar por São João de Meriti.
+      </blockquote>
+      <p class="quote-sub reveal d2">
+        Meu apoio não é apenas eleitoral. É um compromisso com a nossa cidade
+        e com cada bairro que caminha comigo desde o começo dessa história.
+      </p>
+      <div class="quote-attrib reveal d3">
+        <div>
+          <div class="who">Dudu Padrinho</div>
+          <div class="role">Liderança Política · São João de Meriti / RJ</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION: CANDIDATOS ============ -->
+<section class="apoios" id="apoios">
+  <div class="container">
+    <div class="apoios-header">
+      <div>
+        <span class="eyebrow reveal">Quem caminha com a gente</span>
+        <h2 class="headline display reveal d1" style="margin-top: 20px;">
+          Nomes escolhidos por <em>propósito.</em>
+          Não por conveniência.
+        </h2>
+      </div>
+      <div class="counter reveal d2">
+        <b>02</b>
+        Candidaturas apoiadas
+      </div>
+    </div>
+
+    <div class="candidates">
+      <!-- Deputado Federal -->
+      <article class="candidate reveal">
+        <header class="candidate-header">
+          <span class="cargo">Deputado Federal</span>
+          <span class="num"><small>Número</small>1212</span>
+        </header>
+        <div class="candidate-photo has-photo">
+          <img src="tavares.png" alt="Marcos Tavares — Deputado Federal · 1212" onerror="this.parentNode.classList.remove('has-photo'); this.remove();" />
+          <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" class="photo-fallback">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/>
+          </svg>
+          <div class="photo-label">Foto oficial · em breve</div>
+        </div>
+        <div class="candidate-body">
+          <h3 class="candidate-name">Marcos Tavares</h3>
+          <div class="candidate-partido">PDT · CNPJ 68.441.838/0001-54</div>
+          <blockquote class="candidate-quote">
+            Escolhido por Dudu por trajetória, estrutura e por assumir publicamente
+            compromissos com São João de Meriti.
+          </blockquote>
+          <div class="candidate-list-title">Compromissos com a cidade</div>
+          <ul class="candidate-list">
+            <li>Compromisso a ser divulgado em breve</li>
+            <li>Compromisso a ser divulgado em breve</li>
+            <li>Compromisso a ser divulgado em breve</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Deputado Estadual -->
+      <article class="candidate reveal d1">
+        <header class="candidate-header">
+          <span class="cargo">Deputado Estadual</span>
+          <span class="num"><small>Número</small>11500</span>
+        </header>
+        <div class="candidate-photo has-photo">
+          <img src="ravis.png" alt="Felipinho Ravis — Deputado Estadual · 11500" onerror="this.parentNode.classList.remove('has-photo'); this.remove();" />
+          <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" class="photo-fallback">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/>
+          </svg>
+          <div class="photo-label">Foto oficial · em breve</div>
+        </div>
+        <div class="candidate-body">
+          <h3 class="candidate-name">Felipinho Ravis</h3>
+          <div class="candidate-partido">"Decola com a gente!"</div>
+          <blockquote class="candidate-quote">
+            Um apoio construído sobre confiança, capacidade de entrega e visão
+            de longo prazo para os moradores da nossa cidade.
+          </blockquote>
+          <div class="candidate-list-title">Compromissos com a cidade</div>
+          <ul class="candidate-list">
+            <li>Compromisso a ser divulgado em breve</li>
+            <li>Compromisso a ser divulgado em breve</li>
+            <li>Compromisso a ser divulgado em breve</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+
+    <div class="apoios-quote reveal">
+      <h3>
+        <em>São João de Meriti</em> precisa de quem olhe por ela com carinho.
+      </h3>
+      <p>
+        Por isso cada apoio tem um propósito e um compromisso verdadeiro com a nossa cidade.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION: COMPROMISSOS ============ -->
+<section class="compromissos">
+  <div class="container">
+    <div class="compromissos-header">
+      <h2 class="reveal">
+        Não basta pedir voto.
+        <em>É preciso assumir compromisso.</em>
+      </h2>
+      <p class="reveal d1">
+        Cada apoio político dessa jornada está ligado a compromissos reais com
+        São João de Meriti. Nas próximas semanas, cada uma dessas frentes vai
+        ganhar propostas específicas e verificáveis, publicadas nesta página.
+      </p>
+    </div>
+
+    <div class="themes">
+      <div class="theme reveal">
+        <span class="theme-num">01 / 09</span>
+        <div class="theme-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        </div>
+        <h4>Saúde</h4>
+        <p>Atenção básica de qualidade e acesso ampliado nos bairros.</p>
+      </div>
+
+      <div class="theme reveal d1">
+        <span class="theme-num">02 / 09</span>
+        <div class="theme-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5a6 6 0 0012 0v-5"/></svg>
+        </div>
+        <h4>Educação</h4>
+        <p>Escola pública valorizada e caminhos reais para o futuro.</p>
+      </div>
+
+      <div class="theme reveal d2">
+        <span class="theme-num">03 / 09</span>
+        <div class="theme-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h4>Segurança</h4>
+        <p>Meriti mais segura, com presença próxima e prevenção verdadeira.</p>
+      </div>
+
+      <div class="theme reveal">
+        <span class="theme-num">04 / 09</span>
+        <div class="theme-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M6 21V10l6-6 6 6v11M10 21v-6h4v6"/></svg>
+        </div>
+        <h4>Infraestrutura</h4>
+        <p>Bairros dignos, saneamento sério e mobilidade que respeita o morador.</p>
+      </div>
+
+      <div class="theme reveal d1">
+        <span class="theme-num">05 / 09</span>
+        <div class="theme-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        </div>
+        <h4>Desenvolvimento Econômico</h4>
+        <p>Cidade que empreende, contrata e circula riqueza dentro do seu território.</p>
+      </div>
+
+      <div class="theme reveal d2">
+        <span class="theme-num">06 / 09</span>
+        <div class="theme-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2c2.5 3 4 6.5 4 10s-1.5 7-4 10c-2.5-3-4-6.5-4-10s1.5-7 4-10z"/></svg>
+        </div>
+        <h4>Esporte</h4>
+        <p>Praças, escolinhas e projetos que colocam nossos jovens em movimento.</p>
+      </div>
+
+      <div class="theme reveal">
+        <span class="theme-num">07 / 09</span>
+        <div class="theme-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+        </div>
+        <h4>Cultura</h4>
+        <p>A identidade de Meriti valorizada, financiada e vista de perto.</p>
+      </div>
+
+      <div class="theme reveal d1">
+        <span class="theme-num">08 / 09</span>
+        <div class="theme-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 014-4h4a4 4 0 014 4v2M16 3.13a4 4 0 010 7.75M22 21v-2a4 4 0 00-3-3.87"/></svg>
+        </div>
+        <h4>Projetos Sociais</h4>
+        <p>Trabalho comunitário que não depende de eleição para acontecer.</p>
+      </div>
+
+      <div class="theme reveal d2">
+        <span class="theme-num">09 / 09</span>
+        <div class="theme-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22V4l6 4V4l6 4V4l4 3v15"/><path d="M4 22h16"/></svg>
+        </div>
+        <h4>Geração de Oportunidades</h4>
+        <p>Emprego, renda e qualificação para quem precisa do próximo passo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION: INSTITUTO ABREU ============ -->
+<section class="instituto" id="instituto">
+  <div class="container">
+    <div class="instituto-grid">
+      <div class="instituto-visual reveal">
+        <span class="frame-corner fc-tl"></span>
+        <span class="frame-corner fc-tr"></span>
+        <span class="frame-corner fc-bl"></span>
+        <span class="frame-corner fc-br"></span>
+        <div class="instituto-visual-content">
+          <div class="logo-abreu">Instituto<br /><em>Abreu</em></div>
+          <div class="logo-sub">Ação Social · MMXXVI</div>
+        </div>
+      </div>
+
+      <div class="instituto-content">
+        <span class="eyebrow reveal">Instituto Abreu</span>
+        <h2 class="reveal d1">
+          Política passa por eleição.
+          <em>Propósito acontece todos os dias.</em>
+        </h2>
+        <p class="lede reveal d2">
+          O Instituto Abreu é o braço social e comunitário dessa trajetória.
+          Nenhum projeto real depende de mandato, nem de período eleitoral.
+          O trabalho por São João de Meriti continua acontecendo — todos os dias,
+          o ano inteiro.
+        </p>
+
+        <div class="instituto-stats reveal d2">
+          <div>
+            <span class="n">—</span>
+            <span class="l">Pessoas atendidas</span>
+          </div>
+          <div>
+            <span class="n">—</span>
+            <span class="l">Projetos ativos</span>
+          </div>
+          <div>
+            <span class="n">—</span>
+            <span class="l">Bairros alcançados</span>
+          </div>
+        </div>
+
+        <div class="instituto-actions reveal d3">
+          <a href="https://wa.me/5521980603535" target="_blank" rel="noopener" class="btn btn-dark">
+            Conheça o Instituto Abreu
+            <span class="arrow">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
+          </a>
+          <a href="https://wa.me/5521980603535" target="_blank" rel="noopener" class="instituto-phone">
+            <span class="ph-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            </span>
+            <span>
+              <small>Fale direto</small>
+              <strong>+55 21 98060-3535</strong>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION: 2028 (FUTURO) ============ -->
+<section class="futuro" id="futuro">
+  <div class="container">
+    <div class="futuro-year">2028</div>
+    <div class="futuro-content">
+      <h2 class="reveal">
+        O futuro <em>não foi</em><br />cancelado.
+      </h2>
+      <p class="sub reveal d1">
+        Só estamos preparando a pista. Cada passo dado agora constrói o próximo,
+        e cada apoio dado hoje semeia o que vamos colher juntos amanhã.
+      </p>
+      <div class="final reveal d2">
+        O foguete não deu ré.<br />
+        Ele vai decolar na hora certa. <span class="rocket">🚀</span>
+      </div>
+      <div class="marker reveal d3">Rumo a 2028</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION: CONTATO ============ -->
+<section class="contato" id="contato">
+  <div class="container">
+    <div class="contato-grid">
+      <div class="contato-intro">
+        <span class="eyebrow reveal">Fale com o Dudu</span>
+        <h2 class="reveal d1">
+          Vamos continuar <em>essa conversa?</em>
+        </h2>
+        <p class="reveal d2">
+          Escreva pra gente. Cada mensagem chega, é lida e ajuda a construir esse
+          próximo passo. Se preferir, siga o Dudu no Instagram e acompanhe todos
+          os dias por dentro.
+        </p>
+
+        <div class="contato-social reveal d3">
+          <a href="https://instagram.com/dudupadrinho" target="_blank" rel="noopener">
+            <span class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+              </svg>
+            </span>
+            <div class="txt">
+              <strong>@dudupadrinho</strong>
+              <small>Acompanhe no Instagram</small>
+            </div>
+            <span class="arrow-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+            </span>
+          </a>
+
+          <a href="https://wa.me/5521980603535" target="_blank" rel="noopener">
+            <span class="icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.5 3.5A11.9 11.9 0 0012 0C5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.7 1 3.7 1.5 5.8 1.5 6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.5-8.4zM12 22c-1.8 0-3.6-.5-5.1-1.4l-.4-.2-3.7 1 1-3.6-.2-.4C2.5 15.7 2 13.9 2 12 2 6.5 6.5 2 12 2s10 4.5 10 10-4.5 10-10 10zm5.5-7.5c-.3-.2-1.8-.9-2.1-1s-.5-.2-.7.2c-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.7.1-.1.3-.4.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.6 0-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.2 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2.1-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.4z"/>
+              </svg>
+            </span>
+            <div class="txt">
+              <strong>+55 21 98060-3535</strong>
+              <small>WhatsApp · Instituto Abreu</small>
+            </div>
+            <span class="arrow-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <form class="contato-form reveal d2" onsubmit="handleSubmit(event)">
+        <span class="badge">Fale Direto</span>
+        <div class="form-grid">
+          <div class="field">
+            <label for="nome">Nome</label>
+            <input id="nome" name="nome" type="text" required autocomplete="name" />
+          </div>
+          <div class="field">
+            <label for="whats">WhatsApp</label>
+            <input id="whats" name="whats" type="tel" placeholder="(21) 9 0000-0000" required />
+          </div>
+          <div class="field">
+            <label for="email">E-mail</label>
+            <input id="email" name="email" type="email" required autocomplete="email" />
+          </div>
+          <div class="field">
+            <label for="bairro">Bairro</label>
+            <input id="bairro" name="bairro" type="text" placeholder="Ex.: Centro, Éden, Vilar dos Teles..." />
+          </div>
+          <div class="field full">
+            <label for="msg">Mensagem</label>
+            <textarea id="msg" name="msg" rows="4" placeholder="Escreva o que você quer falar direto com o Dudu."></textarea>
+          </div>
+          <div class="form-submit">
+            <p class="privacy">
+              Ao enviar, você concorda em receber contato da equipe do Dudu Padrinho
+              sobre esta comunicação. Seus dados não serão compartilhados.
+            </p>
+            <button type="submit" class="btn btn-primary">
+              Enviar mensagem
+              <span class="arrow">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </span>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#top" class="brand" style="color: #fff;" aria-label="Dudu Padrinho">
+          <img src="logo.png" alt="Dudu Padrinho — Tropa do Foguete não tem ré" class="brand-logo" style="height: 56px;" />
+        </a>
+        <p>
+          Uma decisão, um propósito e um compromisso ainda maior com São João de Meriti.
+          O projeto continua. A candidatura pode ter esperado — o trabalho, não.
+        </p>
+      </div>
+
+      <div>
+        <h5>Navegue</h5>
+        <ul>
+          <li><a href="#proposito">O Propósito</a></li>
+          <li><a href="#apoios">Nossos Apoios</a></li>
+          <li><a href="#instituto">Instituto Abreu</a></li>
+          <li><a href="#contato">Fale Conosco</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5>Institucional</h5>
+        <ul>
+          <li><a href="#instituto">Instituto Abreu</a></li>
+          <li><a href="#futuro">Rumo a 2028</a></li>
+          <li><a href="#contato">Imprensa</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5>Redes</h5>
+        <ul>
+          <li><a href="https://instagram.com/dudupadrinho" target="_blank" rel="noopener">Instagram ↗</a></li>
+          <li><a href="https://wa.me/5521980603535" target="_blank" rel="noopener">WhatsApp · Instituto</a></li>
+          <li><a href="#contato">E-mail direto</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-wordmark">DUDU <em>Padrinho.</em></div>
+
+    <div class="footer-bottom">
+      <div>© 2026 Dudu Padrinho · São João de Meriti / RJ</div>
+      <div class="footer-legal">
+        Espaço reservado para informações legais e eleitorais obrigatórias.
+        Este site é um veículo de comunicação institucional.
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scrolled nav
+  const nav = document.getElementById('nav');
+  const onScroll = () => {
+    if (window.scrollY > 40) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  };
+  document.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  revealEls.forEach((el) => io.observe(el));
+
+  // Form handler (no backend — placeholder for prod)
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type="submit"]');
+    const orig = btn.innerHTML;
+    btn.innerHTML = 'Mensagem enviada · obrigado!';
+    btn.disabled = true;
+    btn.style.opacity = '0.8';
+    setTimeout(() => {
+      e.target.reset();
+      btn.innerHTML = orig;
+      btn.disabled = false;
+      btn.style.opacity = '1';
+    }, 3200);
+  }
+
+  // Mobile nav toggle (simple)
+  const toggle = document.querySelector('.nav-toggle');
+  const links = document.querySelector('.nav-links');
+  if (toggle && links) {
+    toggle.addEventListener('click', () => {
+      const isOpen = links.style.display === 'flex';
+      if (isOpen) {
+        links.style.display = 'none';
+      } else {
+        links.style.display = 'flex';
+        links.style.position = 'absolute';
+        links.style.top = '100%';
+        links.style.left = '0';
+        links.style.right = '0';
+        links.style.flexDirection = 'column';
+        links.style.background = 'rgba(6, 22, 50, 0.98)';
+        links.style.padding = '24px var(--pad-x)';
+        links.style.gap = '18px';
+      }
+    });
+  }
+</script>
+
+</body>
+</html>

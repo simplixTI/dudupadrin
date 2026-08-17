@@ -1,0 +1,16 @@
+# Reference / working assets (not part of site)
+ref1.png
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
