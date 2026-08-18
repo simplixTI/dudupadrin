@@ -205,22 +205,28 @@
     align-items: center;
   }
 
-  /* Poster mode (desktop) */
+  /* Poster mode (desktop) — respects natural aspect ratio */
   .hero-poster {
     position: relative;
     width: 100%;
-    height: 100vh;
-    min-height: 620px;
-    max-height: 1024px;
-    display: block;
+    min-height: 100vh;
+    background: #061632;
+    display: grid;
+    place-items: center;
+  }
+  .hero-poster-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1374 / 1145;
+    max-height: 100vh;
+    max-width: calc(100vh * 1374 / 1145);
+    margin: 0 auto;
   }
   .hero-poster-img {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center center;
     display: block;
   }
   /* Invisible click zones over the baked-in CTAs */
@@ -235,9 +241,9 @@
     transition: background 0.25s;
   }
   .hero-poster-hit:hover { background: rgba(255,255,255,0.05); }
-  /* Positions calibrated to the stacked-CTA landscape composition */
-  .hit-primary   { left: 4.5%;  bottom: 34%; width: 26%; height: 7%; }
-  .hit-secondary { left: 4.5%;  bottom: 25%; width: 26%; height: 7%; }
+  /* Positions calibrated to 1374x1145 poster with stacked CTAs on left */
+  .hit-primary   { left: 3%;  top: 63%;  width: 15%; height: 5%; }
+  .hit-secondary { left: 3%;  top: 68.5%; width: 17%; height: 5%; }
 
   /* Mobile hero container */
   .hero-mobile {
@@ -1731,11 +1737,13 @@
 
   <!-- Desktop / tablet-landscape: full-bleed poster with baked-in headline + CTAs -->
   <div class="hero-poster">
-    <img src="hero.png" alt="O foguete não deu ré — Ele vai decolar na hora certa. Dudu Padrinho." class="hero-poster-img" onerror="document.querySelector('.hero-poster').style.display='none';document.querySelector('.hero-mobile').style.display='block';document.querySelector('.hero .scroll-cue').style.display='none';" />
+    <div class="hero-poster-frame">
+      <img src="hero.png" alt="O foguete não deu ré — Ele vai decolar na hora certa. Dudu Padrinho." class="hero-poster-img" onerror="document.querySelector('.hero-poster').style.display='none';document.querySelector('.hero-mobile').style.display='block';document.querySelector('.hero .scroll-cue').style.display='none';" />
 
-    <!-- Invisible clickable overlays positioned over the baked-in CTAs -->
-    <a href="#proposito" class="hero-poster-hit hit-primary" aria-label="Entenda essa decisão"></a>
-    <a href="#apoios" class="hero-poster-hit hit-secondary" aria-label="Conheça quem Dudu apoia"></a>
+      <!-- Invisible clickable overlays positioned over the baked-in CTAs -->
+      <a href="#proposito" class="hero-poster-hit hit-primary" aria-label="Entenda essa decisão"></a>
+      <a href="#apoios" class="hero-poster-hit hit-secondary" aria-label="Conheça quem Dudu apoia"></a>
+    </div>
   </div>
 
   <!-- Mobile fallback: HTML hero (poster doesn't work well in portrait) -->
