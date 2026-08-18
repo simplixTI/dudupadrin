@@ -192,77 +192,191 @@
 
   .nav-toggle { display: none; color: #fff; }
 
-  /* ============ HERO ============ */
+  /* ============ HERO (CINEMATIC OVERLAY) ============ */
   .hero {
     position: relative;
+    width: 100vw;
     min-height: 100vh;
     background: var(--navy-deep);
     color: #fff;
     overflow: hidden;
-    padding-top: 0;
-    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Full-bleed background image */
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+  }
+  .hero-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right center;
+    display: block;
+  }
+  /* Fade the left side to navy for headline legibility */
+  .hero-bg-fade {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(90deg, rgba(6,22,50,0.92) 0%, rgba(6,22,50,0.55) 35%, rgba(6,22,50,0) 55%),
+      linear-gradient(180deg, rgba(6,22,50,0.3) 0%, transparent 30%, rgba(6,22,50,0.6) 100%);
+  }
+
+  /* Overlay content */
+  .hero-overlay {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    padding-top: 120px;
+  }
+  .hero-overlay-inner {
+    flex: 1;
     display: flex;
     align-items: center;
   }
+  .hero-copy {
+    max-width: 620px;
+    width: 100%;
+  }
 
-  /* Poster mode (desktop) — respects natural aspect ratio */
-  .hero-poster {
+  /* Headline overrides */
+  .hero-headline {
+    font-size: clamp(48px, 8.5vw, 128px);
+    color: #fff;
+    margin-bottom: 24px;
+  }
+  .hero-headline .line-2 { display: block; }
+  .hero-headline .ré {
+    display: inline-block;
     position: relative;
-    width: 100%;
-    min-height: 100vh;
-    background: #061632;
-    display: grid;
-    place-items: center;
+    color: var(--yellow);
   }
-  .hero-poster-frame {
+  .hero-headline .ré::after {
+    content: "";
+    position: absolute;
+    left: -6%; right: -6%;
+    top: 52%;
+    height: 8%;
+    background: var(--yellow);
+    transform: rotate(-4deg);
+    opacity: 0.9;
+    z-index: 0;
+    border-radius: 4px;
+  }
+  .hero-headline .line-3 {
+    display: block;
+    font-style: italic;
+    font-variation-settings: "opsz" 144, "SOFT" 100, "wght" 400;
+    color: rgba(255,255,255,0.85);
+    font-size: 0.55em;
+    margin-top: 16px;
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .hero-headline .hc {
+    color: var(--yellow);
     position: relative;
-    width: 100%;
-    aspect-ratio: 1374 / 1145;
-    max-height: 100vh;
-    max-width: calc(100vh * 1374 / 1145);
-    margin: 0 auto;
+    display: inline-block;
   }
-  .hero-poster-img {
+  .hero-headline .hc::after {
+    content: "";
     position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    display: block;
+    left: 0; right: 0;
+    bottom: -0.06em;
+    height: 4px;
+    background: var(--yellow);
+    border-radius: 2px;
   }
-  /* Invisible click zones over the baked-in CTAs */
-  .hero-poster-hit {
-    position: absolute;
-    z-index: 3;
-    display: block;
-    border-radius: 999px;
-    /* debug outline (commented for prod) */
-    /* outline: 2px dashed rgba(255,209,0,0.6); */
-    cursor: pointer;
-    transition: background 0.25s;
-  }
-  .hero-poster-hit:hover { background: rgba(255,255,255,0.05); }
-  /* Positions calibrated to 1374x1145 poster with stacked CTAs on left */
-  .hit-primary   { left: 3%;  top: 63%;  width: 15%; height: 5%; }
-  .hit-secondary { left: 3%;  top: 68.5%; width: 17%; height: 5%; }
 
-  /* Mobile hero container */
-  .hero-mobile {
-    display: none;
-    width: 100%;
-    padding-top: 130px;
-    padding-bottom: 80px;
+  .hero-lede {
+    max-width: 520px;
+    font-size: clamp(16px, 1.15vw, 18px);
+    line-height: 1.65;
+    color: rgba(255,255,255,0.72);
+    margin-bottom: 40px;
+    font-weight: 400;
+  }
+  .hero-lede strong {
+    color: var(--yellow);
+    font-weight: 700;
+  }
+
+  .hero-ctas {
+    display: flex; flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 40px;
+  }
+  .hero-ctas .btn { min-width: 280px; justify-content: space-between; }
+
+  /* Bottom strip */
+  .hero-strip {
     position: relative;
     z-index: 2;
+    padding: 24px 0 20px;
+    background: linear-gradient(180deg, transparent 0%, rgba(6,22,50,0.55) 40%, rgba(6,22,50,0.85) 100%);
   }
-  .hero-mobile::before {
-    content: "";
-    position: absolute; inset: 0;
-    background:
-      radial-gradient(600px 400px at 85% 0%, rgba(18, 48, 95, 0.9), transparent 60%),
-      radial-gradient(500px 400px at 10% 100%, rgba(255, 209, 0, 0.08), transparent 60%),
-      linear-gradient(180deg, #071733 0%, #061632 60%, #04122A 100%);
-    z-index: -1;
+  .hero-pills {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    padding: 18px 24px;
+    background: rgba(6, 22, 50, 0.55);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 18px;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    margin-bottom: 18px;
   }
+  .pill {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .pill-icon {
+    width: 40px; height: 40px;
+    flex-shrink: 0;
+    color: var(--yellow);
+    display: grid; place-items: center;
+  }
+  .pill-icon svg { width: 100%; height: 100%; }
+  .pill-txt {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+    color: rgba(255,255,255,0.78);
+    font-size: 12.5px;
+  }
+  .pill-txt b {
+    color: #fff;
+    font-family: var(--f-body);
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: -0.005em;
+    margin-bottom: 2px;
+  }
+
+  .hero-tagline {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    color: var(--yellow);
+    font-family: var(--f-body);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+  }
+  .hero-tagline .sep { color: rgba(255,209,0,0.4); }
   /* Atmospheric background: gradients + grid + grain */
   .hero::before {
     content: "";
@@ -320,63 +434,11 @@
     width: 40px; height: 1px; background: rgba(255,255,255,0.2);
   }
 
-  .hero-headline {
-    font-size: clamp(48px, 8.5vw, 128px);
-    color: #fff;
-    margin-bottom: 24px;
-  }
-  .hero-headline .ré {
-    display: inline-block;
-    position: relative;
-    color: var(--yellow);
-  }
-  .hero-headline .ré::after {
-    content: "";
-    position: absolute;
-    left: -6%; right: -6%;
-    top: 52%;
-    height: 8%;
-    background: var(--yellow);
-    transform: rotate(-4deg);
-    opacity: 0.9;
-    z-index: -1;
-    border-radius: 4px;
-  }
-  .hero-headline .line-2 { display: block; }
-  .hero-headline .line-3 {
-    display: block;
-    font-style: italic;
-    font-variation-settings: "opsz" 144, "SOFT" 100, "wght" 400;
-    color: rgba(255,255,255,0.85);
-    font-size: 0.55em;
-    margin-top: 16px;
-    letter-spacing: -0.02em;
-  }
-  .hero-headline .line-3 .rocket {
-    display: inline-block;
-    color: var(--yellow);
-    margin-left: 8px;
-    animation: liftoff 4s ease-in-out infinite;
-  }
   @keyframes liftoff {
     0%, 100% { transform: translateY(0) rotate(-8deg); }
     50% { transform: translateY(-6px) rotate(-6deg); }
   }
 
-  .hero-lede {
-    max-width: 520px;
-    font-size: clamp(16px, 1.15vw, 18px);
-    line-height: 1.65;
-    color: rgba(255,255,255,0.72);
-    margin-bottom: 40px;
-    font-weight: 400;
-  }
-
-  .hero-ctas {
-    display: flex; flex-wrap: wrap;
-    gap: 14px;
-    margin-bottom: 40px;
-  }
   .btn {
     display: inline-flex; align-items: center; gap: 12px;
     padding: 16px 26px;
@@ -1646,9 +1708,16 @@
 
   /* ============ RESPONSIVE ============ */
   @media (max-width: 1024px) {
-    .hero-poster { display: none; }
-    .hero-mobile { display: block; }
-    .hero .scroll-cue { display: none; }
+    .hero-bg-img { object-position: 70% center; }
+    .hero-bg-fade {
+      background:
+        linear-gradient(180deg, rgba(6,22,50,0.75) 0%, rgba(6,22,50,0.4) 40%, rgba(6,22,50,0.85) 100%),
+        linear-gradient(90deg, rgba(6,22,50,0.8) 0%, rgba(6,22,50,0.3) 60%, rgba(6,22,50,0) 100%);
+    }
+    .hero-copy { max-width: 100%; }
+    .hero-pills { grid-template-columns: repeat(2, 1fr); gap: 14px; padding: 14px; }
+    .hero-tagline { flex-direction: column; gap: 4px; }
+    .hero-tagline .sep { display: none; }
     .proposito-grid { grid-template-columns: 1fr; gap: 60px; }
     .proposito-headline { position: static; }
     .apoios-header { grid-template-columns: 1fr; align-items: start; }
@@ -1670,14 +1739,13 @@
     .nav.scrolled .nav-toggle { background: rgba(255,255,255,0.08); }
     .brand-logo { height: 34px; }
     .nav.scrolled .brand-logo { height: 30px; }
-    .hero { padding-top: 100px; }
-    .hero-ledger { grid-template-columns: 1fr 1fr; gap: 20px; }
-    .hero-badge { width: 100px; height: 100px; bottom: -20px; left: -20px; }
-    .hero-badge-inner { font-size: 24px; }
-    .hero-year { padding: 8px 14px; top: -14px; right: -14px; }
-    .hero-year .n { font-size: 22px; }
-    .hero-year .l { font-size: 8px; }
-    .trajectory { display: none; }
+    .hero-overlay { padding-top: 100px; }
+    .hero-headline { font-size: clamp(42px, 12vw, 80px); }
+    .hero-strip { padding: 16px 0 14px; }
+    .pill-txt { font-size: 11px; }
+    .pill-txt b { font-size: 13px; }
+    .pill-icon { width: 32px; height: 32px; }
+    .hero-tagline { font-size: 10px; letter-spacing: 0.24em; }
     .quote-mark { font-size: 120px; margin-bottom: -20px; }
     .themes { grid-template-columns: 1fr; }
     .instituto-stats { grid-template-columns: 1fr; gap: 16px; }
@@ -1732,55 +1800,92 @@
   </div>
 </nav>
 
-<!-- ============ HERO (POSTER MODE) ============ -->
-<header class="hero hero--poster" id="top">
-
-  <!-- Desktop / tablet-landscape: full-bleed poster with baked-in headline + CTAs -->
-  <div class="hero-poster">
-    <div class="hero-poster-frame">
-      <img src="hero.png" alt="O foguete não deu ré — Ele vai decolar na hora certa. Dudu Padrinho." class="hero-poster-img" onerror="document.querySelector('.hero-poster').style.display='none';document.querySelector('.hero-mobile').style.display='block';document.querySelector('.hero .scroll-cue').style.display='none';" />
-
-      <!-- Invisible clickable overlays positioned over the baked-in CTAs -->
-      <a href="#proposito" class="hero-poster-hit hit-primary" aria-label="Entenda essa decisão"></a>
-      <a href="#apoios" class="hero-poster-hit hit-secondary" aria-label="Conheça quem Dudu apoia"></a>
-    </div>
+<!-- ============ HERO (CINEMATIC OVERLAY) ============ -->
+<header class="hero" id="top">
+  <!-- Full-bleed background image (clean visual: Dudu + rocket + city, no baked text) -->
+  <div class="hero-bg">
+    <img src="hero.png" alt="" class="hero-bg-img" />
+    <div class="hero-bg-fade"></div>
   </div>
 
-  <!-- Mobile fallback: HTML hero (poster doesn't work well in portrait) -->
-  <div class="hero-mobile">
-    <div class="container">
-      <div class="hero-meta reveal">
-        <span class="dot"></span>
-        <span>Comunicado Oficial</span>
-        <span class="divider"></span>
-        <span>Agosto · 2026</span>
+  <!-- Overlay content -->
+  <div class="hero-overlay">
+    <div class="container hero-overlay-inner">
+      <div class="hero-copy">
+        <div class="hero-meta reveal">
+          <span class="dot"></span>
+          <span>Comunicado Oficial</span>
+          <span class="divider"></span>
+          <span>Agosto · 2026</span>
+        </div>
+
+        <h1 class="hero-headline display-heavy reveal d1">
+          O foguete
+          <span class="line-2">não deu <span class="ré">ré.</span></span>
+          <span class="line-3 italic">Ele vai decolar<br class="br-desk" /> na <span class="hc">hora certa!</span></span>
+        </h1>
+
+        <p class="hero-lede reveal d2">
+          Tem momentos em que avançar também significa saber esperar.
+          <strong>Dudu</strong> escolheu transformar sua força política em
+          resultados concretos para São João de Meriti — e continuar
+          construindo o próximo grande capítulo.
+        </p>
+
+        <div class="hero-ctas reveal d3">
+          <a href="#proposito" class="btn btn-primary">
+            Entenda essa decisão
+            <span class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+          <a href="#apoios" class="btn btn-ghost">
+            Conheça quem Dudu apoia
+            <span class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+        </div>
       </div>
+    </div>
 
-      <h1 class="hero-headline display-heavy reveal d1">
-        O foguete
-        <span class="line-2">não deu <span class="ré">ré.</span></span>
-        <span class="line-3 italic">Ele vai decolar<br />na hora certa. <span class="rocket">🚀</span></span>
-      </h1>
+    <!-- Bottom strip: theme pills + tagline -->
+    <div class="hero-strip">
+      <div class="container">
+        <div class="hero-pills reveal d4">
+          <div class="pill">
+            <span class="pill-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            </span>
+            <span class="pill-txt"><b>Saúde</b>com qualidade</span>
+          </div>
+          <div class="pill">
+            <span class="pill-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+            </span>
+            <span class="pill-txt"><b>Segurança</b>para nossa gente</span>
+          </div>
+          <div class="pill">
+            <span class="pill-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5a6 6 0 0012 0v-5"/></svg>
+            </span>
+            <span class="pill-txt"><b>Educação</b>que transforma</span>
+          </div>
+          <div class="pill">
+            <span class="pill-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M6 21V8l6-4 6 4v13M10 21v-6h4v6"/></svg>
+            </span>
+            <span class="pill-txt"><b>Infraestrutura</b>que conecta</span>
+          </div>
+          <div class="pill">
+            <span class="pill-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 014-4h4a4 4 0 014 4v2M16 3.13a4 4 0 010 7.75M22 21v-2a4 4 0 00-3-3.87"/></svg>
+            </span>
+            <span class="pill-txt"><b>Oportunidades</b>para todos</span>
+          </div>
+        </div>
 
-      <p class="hero-lede reveal d2">
-        Tem momentos em que avançar também significa saber esperar. Dudu Padrinho
-        escolheu transformar sua força política em resultados concretos para
-        São João de Meriti.
-      </p>
-
-      <div class="hero-ctas reveal d3">
-        <a href="#proposito" class="btn btn-primary">
-          Entenda essa decisão
-          <span class="arrow">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </span>
-        </a>
-        <a href="#apoios" class="btn btn-ghost">
-          Quem Dudu apoia
-          <span class="arrow">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </span>
-        </a>
+        <div class="hero-tagline reveal">
+          <span>2026 é construção.</span>
+          <span class="sep">·</span>
+          <span>2028 é o próximo capítulo.</span>
+        </div>
       </div>
     </div>
   </div>
