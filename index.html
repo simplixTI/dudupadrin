@@ -860,105 +860,74 @@
     line-height: 1;
   }
 
-  /* ============ SECTION 7: 2028 ============ */
-  .futuro {
-    background: var(--navy-deep);
-    color: #fff;
-    padding: clamp(120px, 16vw, 200px) 0;
-    position: relative;
-    overflow: hidden;
-    text-align: center;
+  /* ============ SECTION: PROJETO 2028 ============ */
+  .fut-header { max-width: 900px; margin-bottom: clamp(44px, 6vw, 72px); }
+  .fut-header h2 {
+    font-size: clamp(2.2rem, 5vw, 4.1rem);
+    margin-top: 22px;
+    color: var(--navy);
   }
-  .futuro::before {
-    content: "";
-    position: absolute; inset: 0;
-    background:
-      radial-gradient(800px 500px at 50% 100%, rgba(255,209,0,0.12), transparent 60%),
-      radial-gradient(600px 400px at 50% 0%, rgba(18,48,95,0.5), transparent 60%);
-  }
-  .futuro::after {
-    content: "";
-    position: absolute; inset: 0;
-    background-image:
-      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-    background-size: 80px 80px;
-    mask-image: radial-gradient(ellipse at 50% 50%, black 20%, transparent 70%);
-    -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 20%, transparent 70%);
+  .fut-header .fwd { display: block; color: var(--muted); }
+  .fut-intro {
+    margin-top: 26px;
+    font-size: clamp(1rem, 1.3vw, 1.15rem);
+    line-height: 1.68;
+    color: var(--ink-soft);
+    max-width: 680px;
   }
 
-  .futuro-year {
-    font-family: var(--f-display);
-    font-weight: 700;
-    font-size: clamp(200px, 40vw, 560px);
-    line-height: 0.85;
-    letter-spacing: -0.05em;
-    background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    -webkit-text-stroke: 1px rgba(255,255,255,0.18);
-    text-align: center;
-    margin-bottom: -0.4em;
-    position: relative;
-    z-index: 0;
-    user-select: none;
+  .timeline {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(18px, 2.4vw, 30px);
+    margin-bottom: clamp(60px, 8vw, 110px);
   }
-
-  .futuro-content {
-    position: relative;
-    z-index: 1;
-    max-width: 900px;
-    margin: 0 auto;
+  .tl-step {
+    padding: clamp(22px, 2.6vw, 32px);
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    border-top: 3px solid var(--navy);
   }
-  .futuro h2 {
+  .tl-step.tl-next { border-top-color: var(--yellow); }
+  .tl-year {
     font-family: var(--f-display);
-    font-weight: 600;
-    font-size: clamp(44px, 6.5vw, 96px);
+    font-variation-settings: "opsz" 144, "SOFT" 20, "wght" 700;
+    font-size: clamp(2rem, 3.4vw, 2.8rem);
     line-height: 1;
-    letter-spacing: -0.03em;
-    color: #fff;
-    margin-bottom: 24px;
+    color: var(--navy);
   }
-  .futuro h2 em {
-    font-style: italic;
-    color: var(--yellow);
-    font-variation-settings: "opsz" 144, "SOFT" 100, "wght" 400;
+  .tl-step.tl-next .tl-year { color: var(--yellow-warm); }
+  .tl-step h3 {
+    font-family: var(--f-body);
+    font-size: 1rem; font-weight: 700;
+    color: var(--navy);
+    margin: 14px 0 8px;
   }
-  .futuro .sub {
-    font-size: 20px;
-    color: rgba(255,255,255,0.7);
-    max-width: 600px;
-    margin: 0 auto 60px;
-    line-height: 1.5;
+  .tl-step p {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: var(--ink-soft);
   }
-  .futuro .final {
+
+  .frentes-title {
     font-family: var(--f-display);
-    font-style: italic;
-    font-variation-settings: "opsz" 144, "SOFT" 100, "wght" 400;
-    font-size: clamp(24px, 3vw, 40px);
-    line-height: 1.3;
-    color: var(--yellow);
-    max-width: 700px;
-    margin: 0 auto;
-    padding-top: 40px;
-    border-top: 1px solid rgba(255,255,255,0.15);
+    font-variation-settings: "opsz" 144, "SOFT" 40, "wght" 500;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    line-height: 1.12;
+    color: var(--navy);
   }
-  .futuro .final .rocket {
-    display: inline-block;
-    animation: liftoff 3s ease-in-out infinite;
+  .frentes-sub {
+    margin: 16px 0 clamp(34px, 4vw, 54px);
+    font-size: clamp(0.96rem, 1.2vw, 1.08rem);
+    line-height: 1.66;
+    color: var(--ink-soft);
+    max-width: 640px;
   }
-  .futuro .marker {
-    margin-top: 60px;
-    display: inline-block;
-    padding: 12px 28px;
-    border: 1px solid rgba(255,209,0,0.4);
-    color: var(--yellow);
-    font-weight: 700;
-    font-size: 13px;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    border-radius: 999px;
+
+  @media (max-width: 860px) {
+    .timeline { grid-template-columns: 1fr; }
   }
 
   /* ============ SECTION 8: CONTATO ============ */
@@ -1470,19 +1439,122 @@
 </section>
 
 <!-- ============ SECTION: COMPROMISSOS ============ -->
-<section class="compromissos">
+
+<!-- ============ SECTION: INSTITUTO ABREU ============ -->
+<section class="instituto" id="instituto">
   <div class="container">
-    <div class="compromissos-header">
-      <h2 class="reveal">
-        Não basta pedir voto.
-        <em>É preciso assumir compromisso.</em>
+    <div class="instituto-grid">
+      <div class="instituto-visual reveal">
+        <img src="abreu.png" alt="Instituto Abreu — Abrir caminhos através da cultura, do esporte e do conhecimento" class="instituto-visual-img" />
+        <span class="frame-corner fc-tl"></span>
+        <span class="frame-corner fc-tr"></span>
+        <span class="frame-corner fc-bl"></span>
+        <span class="frame-corner fc-br"></span>
+      </div>
+
+      <div class="instituto-content">
+        <span class="eyebrow reveal">Instituto Abreu</span>
+        <h2 class="reveal d1">
+          Política passa por eleição.
+          <em>Propósito acontece todos os dias.</em>
+        </h2>
+        <p class="lede reveal d2">
+          O Instituto Abreu é o braço social e comunitário dessa trajetória.
+          Nosso propósito: <strong>abrir caminhos através da cultura, do esporte
+          e do conhecimento.</strong> Nenhum projeto real depende de mandato, nem
+          de período eleitoral — o trabalho por São João de Meriti continua
+          acontecendo todos os dias, o ano inteiro.
+        </p>
+
+        <div class="instituto-stats reveal d2">
+          <div>
+            <span class="n">—</span>
+            <span class="l">Pessoas atendidas</span>
+          </div>
+          <div>
+            <span class="n">—</span>
+            <span class="l">Projetos ativos</span>
+          </div>
+          <div>
+            <span class="n">—</span>
+            <span class="l">Bairros alcançados</span>
+          </div>
+        </div>
+
+        <div class="instituto-actions reveal d3">
+          <a href="https://wa.me/5521980603535" target="_blank" rel="noopener" class="btn btn-dark">
+            Conheça o Instituto Abreu
+            <span class="arrow">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
+          </a>
+          <a href="https://wa.me/5521980603535" target="_blank" rel="noopener" class="instituto-phone">
+            <span class="ph-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            </span>
+            <span>
+              <small>Fale direto</small>
+              <strong>+55 21 98060-3535</strong>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION: 2028 (FUTURO) ============ -->
+<section class="futuro sec-cream" id="futuro">
+  <div class="container">
+    <div class="fut-header">
+      <span class="eyebrow reveal">Projeto 2028</span>
+      <h2 class="display reveal d1">
+        2028 não começa em 2028.
+        <span class="fwd">Começa agora.</span>
       </h2>
-      <p class="reveal d1">
-        Cada apoio político dessa jornada está ligado a compromissos reais com
-        São João de Meriti. Nas próximas semanas, cada uma dessas frentes vai
-        ganhar propostas específicas e verificáveis, publicadas nesta página.
+      <p class="fut-intro reveal d2">
+        O próximo capítulo começa com planejamento, presença nos bairros, escuta
+        da população e construção de propostas concretas. São João de Meriti
+        merece mais — e o futuro que queremos construir exige compromisso desde já.
       </p>
     </div>
+
+    <ol class="timeline">
+      <li class="tl-step reveal">
+        <span class="tl-year">2026</span>
+        <h3>A decisão e o resultado</h3>
+        <p>
+          A força política virou representação concreta: dois parlamentares
+          eleitos e uma base que se provou em três cidades da Baixada.
+        </p>
+      </li>
+      <li class="tl-step reveal d1">
+        <span class="tl-year">2027</span>
+        <h3>Presença e escuta</h3>
+        <p>
+          Trabalho de campo bairro a bairro, escuta da população e construção
+          de propostas junto com quem vive a cidade todos os dias.
+        </p>
+      </li>
+      <li class="tl-step reveal d2 tl-next">
+        <span class="tl-year">2028</span>
+        <h3>O próximo capítulo</h3>
+        <p>
+          Com planejamento feito, base organizada e propostas na mão. O que vem
+          depois, a gente conta na hora certa.
+        </p>
+      </li>
+    </ol>
+
+    <div class="fut-frentes">
+      <h3 class="frentes-title reveal">
+        As frentes que orientam esse trabalho
+      </h3>
+      <p class="frentes-sub reveal d1">
+        Cada uma dessas áreas é uma frente de atuação — agora com representação
+        no estado e na União para ajudar a destravar o que depende de recurso
+        e articulação.
+      </p>
 
     <div class="themes">
       <div class="theme reveal">
@@ -1566,89 +1638,7 @@
         <p>Emprego, renda e qualificação para quem precisa do próximo passo.</p>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ============ SECTION: INSTITUTO ABREU ============ -->
-<section class="instituto" id="instituto">
-  <div class="container">
-    <div class="instituto-grid">
-      <div class="instituto-visual reveal">
-        <img src="abreu.png" alt="Instituto Abreu — Abrir caminhos através da cultura, do esporte e do conhecimento" class="instituto-visual-img" />
-        <span class="frame-corner fc-tl"></span>
-        <span class="frame-corner fc-tr"></span>
-        <span class="frame-corner fc-bl"></span>
-        <span class="frame-corner fc-br"></span>
-      </div>
-
-      <div class="instituto-content">
-        <span class="eyebrow reveal">Instituto Abreu</span>
-        <h2 class="reveal d1">
-          Política passa por eleição.
-          <em>Propósito acontece todos os dias.</em>
-        </h2>
-        <p class="lede reveal d2">
-          O Instituto Abreu é o braço social e comunitário dessa trajetória.
-          Nosso propósito: <strong>abrir caminhos através da cultura, do esporte
-          e do conhecimento.</strong> Nenhum projeto real depende de mandato, nem
-          de período eleitoral — o trabalho por São João de Meriti continua
-          acontecendo todos os dias, o ano inteiro.
-        </p>
-
-        <div class="instituto-stats reveal d2">
-          <div>
-            <span class="n">—</span>
-            <span class="l">Pessoas atendidas</span>
-          </div>
-          <div>
-            <span class="n">—</span>
-            <span class="l">Projetos ativos</span>
-          </div>
-          <div>
-            <span class="n">—</span>
-            <span class="l">Bairros alcançados</span>
-          </div>
-        </div>
-
-        <div class="instituto-actions reveal d3">
-          <a href="https://wa.me/5521980603535" target="_blank" rel="noopener" class="btn btn-dark">
-            Conheça o Instituto Abreu
-            <span class="arrow">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </span>
-          </a>
-          <a href="https://wa.me/5521980603535" target="_blank" rel="noopener" class="instituto-phone">
-            <span class="ph-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-            </span>
-            <span>
-              <small>Fale direto</small>
-              <strong>+55 21 98060-3535</strong>
-            </span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ SECTION: 2028 (FUTURO) ============ -->
-<section class="futuro" id="futuro">
-  <div class="container">
-    <div class="futuro-year">2028</div>
-    <div class="futuro-content">
-      <h2 class="reveal">
-        O futuro <em>não foi</em><br />cancelado.
-      </h2>
-      <p class="sub reveal d1">
-        Só estamos preparando a pista. Cada passo dado agora constrói o próximo,
-        e cada apoio dado hoje semeia o que vamos colher juntos amanhã.
-      </p>
-      <div class="final reveal d2">
-        O foguete não deu ré.<br />
-        Ele vai decolar na hora certa. <span class="rocket">🚀</span>
-      </div>
-      <div class="marker reveal d3">Rumo a 2028</div>
     </div>
   </div>
 </section>
