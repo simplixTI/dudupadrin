@@ -401,168 +401,70 @@
     overflow: hidden;
   }
 
-  /* ============ SECTION 2: PROPÓSITO ============ */
-  .proposito {
-    background: var(--cream);
-    padding: clamp(100px, 14vw, 180px) 0;
-    position: relative;
-    overflow: hidden;
+  /* ============ SECTION: ALIANÇAS ============ */
+  .ali-header { max-width: 900px; margin-bottom: clamp(44px, 6vw, 72px); }
+  .ali-header h2 {
+    font-size: clamp(2.2rem, 5vw, 4.1rem);
+    margin-top: 22px;
+    color: #fff;
   }
-  .proposito::before {
-    content: "";
-    position: absolute;
-    top: -40px; right: -80px;
-    width: 400px; height: 400px;
-    background: radial-gradient(circle, rgba(255,209,0,0.15), transparent 65%);
-    z-index: 0;
-  }
-  .proposito .container { position: relative; z-index: 1; }
+  .ali-header .hc { display: block; color: var(--yellow); }
 
-  .proposito-grid {
+  .ali-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 100px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+    gap: clamp(34px, 5vw, 76px);
     align-items: start;
   }
-  .proposito-headline {
-    font-size: clamp(44px, 6vw, 92px);
-    color: var(--navy-deep);
-    position: sticky;
-    top: 120px;
+  .ali-copy p {
+    font-size: clamp(1rem, 1.3vw, 1.14rem);
+    line-height: 1.72;
+    color: rgba(255, 255, 255, 0.82);
   }
-  .proposito-headline .fwd {
-    display: block;
-    font-style: italic;
-    font-variation-settings: "opsz" 144, "SOFT" 100, "wght" 400;
-    color: var(--yellow-warm);
-    margin-top: 12px;
-  }
-  .proposito-headline .arrow-down {
-    display: inline-block;
-    color: var(--yellow-warm);
-    transform: rotate(90deg);
-    margin-right: 8px;
-    font-size: 0.5em;
-    vertical-align: middle;
-    opacity: 0.6;
-  }
+  .ali-copy p + p { margin-top: 20px; }
 
-  .proposito-body p {
-    font-size: 18px;
-    line-height: 1.75;
-    color: var(--ink-soft);
-    margin-bottom: 26px;
+  .ali-chain { display: flex; flex-direction: column; }
+  .chain-node {
+    padding: 20px 22px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--line-navy);
   }
-  .proposito-body p:first-child::first-letter {
-    font-family: var(--f-display);
-    font-weight: 700;
-    font-size: 5.2em;
-    float: left;
-    line-height: 0.85;
-    margin: 8px 12px -8px 0;
-    color: var(--navy-deep);
+  .chain-node.chain-city {
+    background: rgba(255, 209, 0, 0.1);
+    border-color: rgba(255, 209, 0, 0.42);
   }
-  .proposito-body strong {
-    color: var(--navy-deep);
-    font-weight: 700;
-  }
-  .proposito-body .callout {
+  .chain-tier {
     display: block;
-    margin-top: 40px;
-    padding-top: 32px;
-    border-top: 2px solid var(--navy-deep);
-    font-family: var(--f-display);
-    font-weight: 500;
-    font-size: 26px;
-    line-height: 1.3;
-    color: var(--navy-deep);
-    letter-spacing: -0.01em;
-  }
-  .proposito-body .callout span {
-    color: var(--yellow-warm);
-    font-style: italic;
-  }
-
-  /* ============ SECTION 3: QUOTE ============ */
-  .quote-sec {
-    background: var(--navy-deep);
-    color: #fff;
-    padding: clamp(100px, 14vw, 180px) 0;
-    position: relative;
-    overflow: hidden;
-  }
-  .quote-sec::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(600px 400px at 20% 30%, rgba(18, 48, 95, 0.8), transparent 60%),
-      radial-gradient(500px 400px at 80% 80%, rgba(255, 209, 0, 0.04), transparent 60%);
-  }
-  .quote-sec::after {
-    content: "";
-    position: absolute; inset: 0;
-    background-image:
-      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-    background-size: 80px 80px;
-    mask-image: radial-gradient(ellipse at 50% 50%, black 30%, transparent 80%);
-    -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 30%, transparent 80%);
-  }
-  .quote-inner {
-    position: relative; z-index: 1;
-    max-width: 1100px;
-    margin: 0 auto;
-    text-align: left;
-  }
-  .quote-mark {
-    font-family: var(--f-display);
-    font-weight: 700;
-    font-size: 200px;
-    line-height: 0.7;
-    color: var(--yellow);
-    margin-bottom: -30px;
-    display: block;
-  }
-  .quote-text {
-    font-family: var(--f-display);
-    font-weight: 400;
-    font-style: italic;
-    font-variation-settings: "opsz" 144, "SOFT" 100, "wght" 400;
-    font-size: clamp(32px, 4.5vw, 64px);
-    line-height: 1.15;
-    letter-spacing: -0.02em;
-    color: #fff;
-    margin-bottom: 40px;
-  }
-  .quote-text em {
-    color: var(--yellow);
-    font-style: italic;
-  }
-  .quote-attrib {
-    display: flex; align-items: center; gap: 20px;
-    padding-top: 32px;
-    border-top: 1px solid rgba(255,255,255,0.12);
-  }
-  .quote-attrib .who {
-    font-family: var(--f-display);
-    font-weight: 600;
-    font-size: 20px;
-    color: #fff;
-  }
-  .quote-attrib .role {
-    font-size: 12px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.55);
-    font-weight: 600;
-  }
-  .quote-sub {
     font-family: var(--f-body);
-    font-size: 18px;
-    color: rgba(255,255,255,0.7);
-    max-width: 640px;
-    line-height: 1.6;
+    font-size: 0.62rem; font-weight: 700;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--yellow);
+    margin-bottom: 7px;
+  }
+  .chain-node strong {
+    display: block;
+    font-family: var(--f-display);
+    font-variation-settings: "opsz" 144, "SOFT" 20, "wght" 700;
+    font-size: 1.32rem;
+    line-height: 1.15;
+    color: #fff;
+  }
+  .chain-who {
+    display: block;
+    margin-top: 5px;
+    font-family: var(--f-body);
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.62);
+  }
+  .chain-link {
+    width: 2px; height: 30px;
+    margin-left: 32px;
+    background: linear-gradient(to bottom, rgba(255, 209, 0, 0.65), rgba(255, 209, 0, 0.18));
+  }
+
+  @media (max-width: 900px) {
+    .ali-grid { grid-template-columns: 1fr; }
   }
 
   /* ============ SECTION: RESULTADOS ============ */
@@ -1323,11 +1225,6 @@
   /* ============ RESPONSIVE ============ */
   @media (max-width: 1024px) {
     .hero-copy { max-width: 100%; }
-    .proposito-grid { grid-template-columns: 1fr; gap: 60px; }
-    .proposito-headline { position: static; }
-    .apoios-header { grid-template-columns: 1fr; align-items: start; }
-    .apoios-header .counter { text-align: left; }
-    .candidates { grid-template-columns: 1fr; }
     .compromissos-header { grid-template-columns: 1fr; }
     .compromissos-header p { margin-left: 0; }
     .themes { grid-template-columns: repeat(2, 1fr); }
@@ -1345,7 +1242,6 @@
     .brand-logo { height: 34px; }
     .nav.scrolled .brand-logo { height: 30px; }
     .hero-overlay { padding-top: 100px; }
-    .quote-mark { font-size: 120px; margin-bottom: -20px; }
     .themes { grid-template-columns: 1fr; }
     .instituto-stats { grid-template-columns: 1fr; gap: 16px; }
     .form-grid { grid-template-columns: 1fr; }
@@ -1466,64 +1362,55 @@
   </div>
 </header>
 
-<!-- ============ SECTION: PROPÓSITO ============ -->
-<section class="proposito" id="proposito">
+<!-- ============ SECTION: ALIANÇAS ============ -->
+<section class="aliancas sec-navy" id="aliancas">
   <div class="container">
-    <div class="proposito-grid">
-      <div>
-        <span class="eyebrow reveal">O Propósito</span>
-        <h2 class="proposito-headline display reveal d1" style="margin-top: 24px;">
-          Dois passos<br />
-          para trás.
-          <span class="fwd">Quatro para frente.</span>
-        </h2>
-      </div>
+    <div class="ali-header">
+      <span class="eyebrow reveal">Alianças</span>
+      <h2 class="display reveal d1">
+        Uma cidade mais forte começa
+        <span class="hc">com boas alianças.</span>
+      </h2>
+    </div>
 
-      <div class="proposito-body">
+    <div class="ali-grid">
+      <div class="ali-copy">
         <p class="reveal">
-          Dudu iniciou um projeto para disputar uma vaga como Deputado Federal.
-          Percorreu São João de Meriti de ponta a ponta, conversou com pessoas
-          nas ruas, escutou lideranças comunitárias e testemunhou de perto a força
-          que o projeto conquistou junto à cidade.
+          A decisão tomada em 2026 nasceu de uma convicção: São João de Meriti
+          precisa de união, planejamento e representantes comprometidos com suas
+          necessidades.
         </p>
         <p class="reveal d1">
-          Mas política também exige maturidade para reconhecer o momento certo.
-          Em vez de transformar o projeto em uma candidatura apenas por vaidade
-          ou interesse pessoal, Dudu decidiu <strong>utilizar sua força política
-          para ajudar a eleger representantes mais competitivos</strong> — e construir
-          com eles um compromisso verdadeiro e verificável com São João de Meriti.
+          Em vez de transformar um projeto em candidatura por vaidade, Dudu
+          escolheu usar sua força política para ajudar a eleger representantes
+          mais competitivos — e construir com eles um compromisso verdadeiro
+          com a cidade.
         </p>
         <p class="reveal d2">
-          Não é o fim de um projeto. É parte de uma estratégia maior.
-          Uma decisão que coloca a cidade acima de qualquer candidatura pessoal.
+          A construção de parcerias nas esferas estadual e federal pode abrir
+          caminhos para novos investimentos, projetos e oportunidades. É com
+          diálogo, responsabilidade e trabalho que queremos ajudar a construir
+          uma cidade à altura de sua gente.
         </p>
-
-        <div class="callout reveal d3">
-          <strong>2026 é construção.</strong><br />
-          <span>2028 é o próximo grande capítulo.</span>
-        </div>
       </div>
-    </div>
-  </div>
-</section>
 
-<!-- ============ SECTION: QUOTE TRANSITION ============ -->
-<section class="quote-sec">
-  <div class="container">
-    <div class="quote-inner">
-      <span class="quote-mark reveal">"</span>
-      <blockquote class="quote-text reveal d1">
-        Se eu não estiver lá agora, <em>quero ajudar a colocar lá</em> quem vai
-        olhar por São João de Meriti.
-      </blockquote>
-      <p class="quote-sub reveal d2">
-        Meu apoio não é apenas eleitoral. É um compromisso com a nossa cidade
-        e com cada bairro que caminha comigo desde o começo dessa história.
-      </p>
-      <div class="quote-attrib reveal d3">
-        <div>
-          <div class="who">Dudu Padrinho</div>
-          <div class="role">Liderança Política · São João de Meriti / RJ</div>
+      <div class="ali-chain reveal d1" role="img" aria-label="São João de Meriti conectada ao Governo do Estado pelo deputado estadual Felipinho Ravis e à União pelo deputado federal Marcos Tavares">
+        <div class="chain-node chain-city">
+          <span class="chain-tier">Município</span>
+          <strong>São João de Meriti</strong>
+          <span class="chain-who">Belford Roxo · Nova Iguaçu</span>
+        </div>
+        <div class="chain-link"></div>
+        <div class="chain-node">
+          <span class="chain-tier">Estado</span>
+          <strong>ALERJ</strong>
+          <span class="chain-who">Felipinho Ravis</span>
+        </div>
+        <div class="chain-link"></div>
+        <div class="chain-node">
+          <span class="chain-tier">União</span>
+          <strong>Câmara dos Deputados</strong>
+          <span class="chain-who">Marcos Tavares</span>
         </div>
       </div>
     </div>
