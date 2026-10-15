@@ -19,3 +19,6 @@ desktop.ini
 # Vercel
 .vercel
 .env*
+
+# Playwright / screenshots de verificacao
+.playwright-mcp/

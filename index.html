@@ -1454,16 +1454,7 @@
 
   /* ============ RESPONSIVE ============ */
   @media (max-width: 1024px) {
-    .hero-bg-img { object-position: 70% center; }
-    .hero-bg-fade {
-      background:
-        linear-gradient(180deg, rgba(6,22,50,0.75) 0%, rgba(6,22,50,0.4) 40%, rgba(6,22,50,0.85) 100%),
-        linear-gradient(90deg, rgba(6,22,50,0.8) 0%, rgba(6,22,50,0.3) 60%, rgba(6,22,50,0) 100%);
-    }
     .hero-copy { max-width: 100%; }
-    .hero-pills { grid-template-columns: repeat(2, 1fr); gap: 14px; padding: 14px; }
-    .hero-tagline { flex-direction: column; gap: 4px; }
-    .hero-tagline .sep { display: none; }
     .proposito-grid { grid-template-columns: 1fr; gap: 60px; }
     .proposito-headline { position: static; }
     .apoios-header { grid-template-columns: 1fr; align-items: start; }
@@ -1486,12 +1477,6 @@
     .brand-logo { height: 34px; }
     .nav.scrolled .brand-logo { height: 30px; }
     .hero-overlay { padding-top: 100px; }
-    .hero-headline { font-size: clamp(42px, 12vw, 80px); }
-    .hero-strip { padding: 16px 0 14px; }
-    .pill-txt { font-size: 11px; }
-    .pill-txt b { font-size: 13px; }
-    .pill-icon { width: 32px; height: 32px; }
-    .hero-tagline { font-size: 10px; letter-spacing: 0.24em; }
     .quote-mark { font-size: 120px; margin-bottom: -20px; }
     .themes { grid-template-columns: 1fr; }
     .instituto-stats { grid-template-columns: 1fr; gap: 16px; }
@@ -1505,11 +1490,6 @@
     .hero-ctas { flex-direction: column; align-items: flex-start; }
     .hero-ctas .btn { width: 100%; justify-content: space-between; }
     .btn { padding: 14px 22px; font-size: 12px; }
-  }
-
-  @media (max-width: 480px) {
-    .hero-ledger { grid-template-columns: 1fr; padding-top: 24px; }
-    .hero-headline .line-3 { font-size: 0.5em; }
   }
 
   @media (prefers-reduced-motion: reduce) {
