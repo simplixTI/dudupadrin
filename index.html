@@ -565,229 +565,97 @@
     line-height: 1.6;
   }
 
-  /* ============ SECTION 4: CANDIDATOS ============ */
-  .apoios {
-    background: var(--cream);
-    padding: clamp(100px, 14vw, 180px) 0;
-    position: relative;
+  /* ============ SECTION: RESULTADOS ============ */
+  .res-header { max-width: 880px; margin-bottom: clamp(44px, 6vw, 72px); }
+  .res-header h2 {
+    font-size: clamp(2.4rem, 5.4vw, 4.4rem);
+    margin-top: 22px;
+    color: var(--navy);
+  }
+  .res-header .fwd { display: block; color: var(--muted); }
+  .res-intro {
+    margin-top: 26px;
+    font-size: clamp(1rem, 1.3vw, 1.15rem);
+    line-height: 1.68;
+    color: var(--ink-soft);
+    max-width: 660px;
   }
 
-  .apoios-header {
+  .res-grid {
     display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: end;
-    gap: 40px;
-    margin-bottom: 80px;
-    padding-bottom: 40px;
-    border-bottom: 1px solid var(--line-strong);
-  }
-  .apoios-header .headline {
-    font-size: clamp(42px, 6vw, 84px);
-    color: var(--navy-deep);
-    max-width: 800px;
-  }
-  .apoios-header .headline em {
-    font-style: italic;
-    color: var(--yellow-warm);
-    font-variation-settings: "opsz" 144, "SOFT" 100, "wght" 400;
-  }
-  .apoios-header .counter {
-    text-align: right;
-    color: var(--muted);
-    font-size: 12px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    font-weight: 600;
-    padding-bottom: 12px;
-  }
-  .apoios-header .counter b {
-    display: block;
-    font-family: var(--f-display);
-    font-weight: 700;
-    font-size: 64px;
-    color: var(--navy-deep);
-    line-height: 1;
-    margin-bottom: 6px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(18px, 2.4vw, 30px);
   }
 
-  .candidates {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-  }
-  .candidate {
-    background: #fff;
-    border-radius: 4px;
-    overflow: hidden;
-    position: relative;
+  .res-card {
     display: flex;
-    flex-direction: column;
-    box-shadow: 0 2px 6px rgba(11, 18, 32, 0.04);
-    border: 1px solid var(--line);
-    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s;
-  }
-  .candidate:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 30px 80px -30px rgba(11, 18, 32, 0.35);
-  }
-  .candidate-header {
-    padding: 24px 28px;
-    background: var(--navy-deep);
-    color: #fff;
-    display: flex;
+    gap: clamp(18px, 2.2vw, 28px);
     align-items: center;
-    justify-content: space-between;
+    padding: clamp(20px, 2.4vw, 30px);
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 18px;
   }
-  .candidate-header .cargo {
-    font-family: var(--f-body);
-    font-weight: 700;
-    font-size: 11px;
-    letter-spacing: 0.24em;
-    text-transform: uppercase;
-    color: var(--yellow);
-  }
-  .candidate-header .num {
-    font-family: var(--f-display);
-    font-weight: 700;
-    font-size: 20px;
-    color: #fff;
-    letter-spacing: -0.02em;
-  }
-  .candidate-header .num small {
-    font-size: 10px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.6);
-    font-family: var(--f-body);
-    font-weight: 600;
-    display: block;
-    margin-bottom: 2px;
-  }
-  .candidate-photo {
-    aspect-ratio: 4/5;
-    background: linear-gradient(135deg, #12305F, #061632);
-    position: relative;
-    display: grid;
-    place-items: center;
-    color: rgba(255,255,255,0.35);
-    font-size: 12px;
-    letter-spacing: 0.24em;
-    text-transform: uppercase;
-    overflow: hidden;
-  }
-  .candidate-photo::before {
-    content: "";
-    position: absolute; inset: 0;
-    background:
-      radial-gradient(circle at 50% 60%, rgba(255,255,255,0.12), transparent 60%),
-      linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.3) 100%);
-  }
-  .candidate-photo svg.photo-fallback { position: relative; z-index: 1; opacity: 0.4; }
-  .candidate-photo .photo-label { position: relative; z-index: 1; margin-top: 12px; }
-  .candidate-photo img {
-    position: absolute;
-    inset: 0;
-    width: 100%; height: 100%;
-    object-fit: cover;
-    object-position: center center;
-    z-index: 2;
-  }
-  .candidate-photo.has-photo .photo-fallback,
-  .candidate-photo.has-photo .photo-label { display: none; }
-  .candidate-photo.has-photo::before { display: none; }
-  .candidate-body {
-    padding: 32px 28px 36px;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-  }
-  .candidate-name {
-    font-family: var(--f-display);
-    font-weight: 700;
-    font-size: 32px;
-    line-height: 1.05;
-    color: var(--navy-deep);
-    margin-bottom: 6px;
-    letter-spacing: -0.02em;
-  }
-  .candidate-partido {
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--muted);
-    font-weight: 700;
-    margin-bottom: 24px;
-  }
-  .candidate-quote {
-    font-family: var(--f-display);
-    font-style: italic;
-    font-variation-settings: "opsz" 144, "SOFT" 100, "wght" 400;
-    font-size: 18px;
-    line-height: 1.5;
-    color: var(--ink-soft);
-    padding-left: 20px;
-    border-left: 3px solid var(--yellow);
-    margin-bottom: 24px;
-  }
-  .candidate-list {
-    list-style: none;
-    padding-top: 20px;
-    border-top: 1px solid var(--line);
-    margin-top: auto;
-  }
-  .candidate-list li {
-    display: flex; gap: 12px;
-    font-size: 14px;
-    line-height: 1.5;
-    color: var(--ink-soft);
-    padding: 10px 0;
-    border-bottom: 1px dashed var(--line);
-  }
-  .candidate-list li:last-child { border-bottom: 0; }
-  .candidate-list li::before {
-    content: "→";
-    color: var(--yellow-warm);
-    font-weight: 700;
+  .res-photo {
+    width: clamp(104px, 11vw, 148px);
+    aspect-ratio: 3 / 4;
+    object-fit: cover; object-position: center top;
+    border-radius: 12px;
+    background: var(--cream-warm);
     flex-shrink: 0;
   }
-  .candidate-list-title {
-    font-size: 10px;
-    letter-spacing: 0.24em;
-    text-transform: uppercase;
+  .res-body { min-width: 0; }
+  .res-role {
+    display: inline-block;
+    font-family: var(--f-body);
+    font-size: 0.64rem; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--navy);
+    background: var(--yellow-soft);
+    padding: 5px 10px;
+    border-radius: 999px;
+  }
+  .res-name {
+    font-family: var(--f-display);
+    font-variation-settings: "opsz" 144, "SOFT" 20, "wght" 700;
+    font-size: clamp(1.3rem, 2vw, 1.75rem);
+    line-height: 1.1;
+    color: var(--navy);
+    margin: 12px 0 10px;
+  }
+  .res-number {
+    font-family: var(--f-display);
+    font-variation-settings: "opsz" 144, "SOFT" 20, "wght" 700;
+    font-size: clamp(2.6rem, 5vw, 3.8rem);
+    line-height: 0.95;
+    color: var(--navy);
+  }
+  .res-caption {
+    margin-top: 8px;
+    font-family: var(--f-body);
+    font-size: 0.78rem;
+    line-height: 1.45;
     color: var(--muted);
-    font-weight: 700;
-    margin-bottom: 4px;
+    max-width: 30ch;
   }
 
-  .apoios-quote {
-    margin-top: 100px;
-    padding-top: 80px;
-    border-top: 1px solid var(--line-strong);
-    text-align: center;
-    max-width: 1100px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .apoios-quote h3 {
-    font-family: var(--f-display);
-    font-weight: 500;
-    font-size: clamp(32px, 4.5vw, 60px);
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    color: var(--navy-deep);
-    margin-bottom: 24px;
-  }
-  .apoios-quote h3 em {
-    font-style: italic;
-    color: var(--yellow-warm);
-    font-variation-settings: "opsz" 144, "SOFT" 100, "wght" 400;
-  }
-  .apoios-quote p {
-    font-size: 18px;
+  .res-thanks {
+    margin-top: clamp(40px, 5vw, 68px);
+    padding-top: clamp(28px, 3vw, 40px);
+    border-top: 1px solid var(--line);
+    font-size: clamp(1rem, 1.3vw, 1.15rem);
+    line-height: 1.68;
     color: var(--ink-soft);
-    max-width: 620px;
-    margin: 0 auto;
-    line-height: 1.6;
+    max-width: 760px;
+  }
+  .res-thanks strong { color: var(--navy); }
+
+  @media (max-width: 860px) {
+    .res-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 460px) {
+    .res-card { flex-direction: column; align-items: flex-start; }
+    .res-photo { width: 120px; }
   }
 
   /* ============ SECTION 5: COMPROMISSOS ============ */
@@ -1662,93 +1530,55 @@
   </div>
 </section>
 
-<!-- ============ SECTION: CANDIDATOS ============ -->
-<section class="apoios" id="apoios">
+<!-- ============ SECTION: RESULTADOS ============ -->
+<section class="resultados sec-cream" id="resultados">
   <div class="container">
-    <div class="apoios-header">
-      <div>
-        <span class="eyebrow reveal">Quem caminha com a gente</span>
-        <h2 class="headline display reveal d1" style="margin-top: 20px;">
-          Nomes escolhidos por <em>propósito.</em>
-          Não por conveniência.
-        </h2>
-      </div>
-      <div class="counter reveal d2">
-        <b>02</b>
-        Candidaturas apoiadas
-      </div>
-    </div>
-
-    <div class="candidates">
-      <!-- Deputado Federal -->
-      <article class="candidate reveal">
-        <header class="candidate-header">
-          <span class="cargo">Deputado Federal</span>
-          <span class="num"><small>Número</small>1212</span>
-        </header>
-        <div class="candidate-photo has-photo">
-          <img src="tavares.png" alt="Marcos Tavares — Deputado Federal · 1212" onerror="this.parentNode.classList.remove('has-photo'); this.remove();" />
-          <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" class="photo-fallback">
-            <circle cx="12" cy="8" r="4"/>
-            <path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/>
-          </svg>
-          <div class="photo-label">Foto oficial · em breve</div>
-        </div>
-        <div class="candidate-body">
-          <h3 class="candidate-name">Marcos Tavares</h3>
-          <div class="candidate-partido">PDT · CNPJ 68.441.838/0001-54</div>
-          <blockquote class="candidate-quote">
-            Escolhido por Dudu por trajetória, estrutura e por assumir publicamente
-            compromissos com São João de Meriti.
-          </blockquote>
-          <div class="candidate-list-title">Compromissos com a cidade</div>
-          <ul class="candidate-list">
-            <li>Compromisso a ser divulgado em breve</li>
-            <li>Compromisso a ser divulgado em breve</li>
-            <li>Compromisso a ser divulgado em breve</li>
-          </ul>
-        </div>
-      </article>
-
-      <!-- Deputado Estadual -->
-      <article class="candidate reveal d1">
-        <header class="candidate-header">
-          <span class="cargo">Deputado Estadual</span>
-          <span class="num"><small>Número</small>11500</span>
-        </header>
-        <div class="candidate-photo has-photo">
-          <img src="ravis.png" alt="Felipinho Ravis — Deputado Estadual · 11500" onerror="this.parentNode.classList.remove('has-photo'); this.remove();" />
-          <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" class="photo-fallback">
-            <circle cx="12" cy="8" r="4"/>
-            <path d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"/>
-          </svg>
-          <div class="photo-label">Foto oficial · em breve</div>
-        </div>
-        <div class="candidate-body">
-          <h3 class="candidate-name">Felipinho Ravis</h3>
-          <div class="candidate-partido">"Decola com a gente!"</div>
-          <blockquote class="candidate-quote">
-            Um apoio construído sobre confiança, capacidade de entrega e visão
-            de longo prazo para os moradores da nossa cidade.
-          </blockquote>
-          <div class="candidate-list-title">Compromissos com a cidade</div>
-          <ul class="candidate-list">
-            <li>Compromisso a ser divulgado em breve</li>
-            <li>Compromisso a ser divulgado em breve</li>
-            <li>Compromisso a ser divulgado em breve</li>
-          </ul>
-        </div>
-      </article>
-    </div>
-
-    <div class="apoios-quote reveal">
-      <h3>
-        <em>São João de Meriti</em> precisa de quem olhe por ela com carinho.
-      </h3>
-      <p>
-        Por isso cada apoio tem um propósito e um compromisso verdadeiro com a nossa cidade.
+    <div class="res-header">
+      <span class="eyebrow reveal">Resultados</span>
+      <h2 class="display reveal d1">
+        Cada voto fez parte
+        <span class="fwd">dessa história.</span>
+      </h2>
+      <p class="res-intro reveal d2">
+        A decisão de 2026 não foi um recuo — foi um investimento. E ele rendeu
+        representação em duas esferas ao mesmo tempo: na Assembleia Legislativa
+        do Rio e na Câmara dos Deputados.
       </p>
     </div>
+
+    <div class="res-grid">
+      <article class="res-card reveal d1">
+        <img src="foto1.png" alt="Felipinho Ravis" class="res-photo" loading="lazy" decoding="async" />
+        <div class="res-body">
+          <span class="res-role">Deputado Estadual eleito</span>
+          <h3 class="res-name">Felipinho Ravis</h3>
+          <div class="res-number">4.059</div>
+          <p class="res-caption">
+            votos da nossa liderança em São João de Meriti,
+            Belford Roxo e Nova Iguaçu
+          </p>
+        </div>
+      </article>
+
+      <article class="res-card reveal d2">
+        <img src="foto2.png" alt="Marcos Tavares" class="res-photo" loading="lazy" decoding="async" />
+        <div class="res-body">
+          <span class="res-role">Deputado Federal eleito</span>
+          <h3 class="res-name">Marcos Tavares</h3>
+          <div class="res-number">3.824</div>
+          <p class="res-caption">
+            votos da nossa liderança em São João de Meriti,
+            Belford Roxo e Nova Iguaçu
+          </p>
+        </div>
+      </article>
+    </div>
+
+    <p class="res-thanks reveal d3">
+      A cada eleitor, cada apoiador e cada liderança que caminhou com a gente:
+      <strong>obrigado</strong>. Esses números não são de uma campanha — são de
+      uma base que se manteve de pé em três cidades da Baixada.
+    </p>
   </div>
 </section>
 
