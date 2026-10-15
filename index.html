@@ -930,6 +930,86 @@
     .timeline { grid-template-columns: 1fr; }
   }
 
+  /* ============ SECTION: ENCERRAMENTO / FOGUETE ============ */
+  .foguete {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    background: var(--navy-deep);
+    overflow: hidden;
+  }
+  .fog-bg { position: absolute; inset: 0; z-index: 0; }
+  .fog-bg picture { display: block; width: 100%; height: 100%; }
+  .fog-img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: 72% center;
+    display: block;
+  }
+  /* O recorte ja tem ceu escuro a esquerda; o scrim so firma o contraste. */
+  .fog-scrim {
+    position: absolute; inset: 0;
+    background: linear-gradient(95deg,
+      rgba(6, 22, 50, 0.90) 0%,
+      rgba(6, 22, 50, 0.72) 42%,
+      rgba(6, 22, 50, 0.20) 72%,
+      rgba(6, 22, 50, 0.35) 100%);
+  }
+  .fog-glow {
+    position: absolute;
+    right: 8%; bottom: 6%;
+    width: min(44vw, 520px); aspect-ratio: 1;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 184, 0, 0.30) 0%, rgba(255, 184, 0, 0) 68%);
+    animation: fogPulse 5.5s ease-in-out infinite;
+  }
+  @keyframes fogPulse {
+    0%, 100% { opacity: 0.55; transform: scale(1); }
+    50%      { opacity: 1;    transform: scale(1.1); }
+  }
+
+  .fog-inner { position: relative; z-index: 2; }
+  .fog-copy { max-width: 640px; }
+  .fog-copy h2 {
+    font-size: clamp(2.6rem, 7vw, 5.4rem);
+    color: #fff;
+  }
+  .fog-copy h2 .line-2 { display: block; }
+  .fog-copy h2 .hc { color: var(--yellow); }
+  .fog-sub {
+    margin-top: 22px;
+    font-size: clamp(1.02rem, 1.5vw, 1.3rem);
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.86);
+  }
+  .fog-year {
+    margin-top: clamp(32px, 4vw, 54px);
+    font-family: var(--f-display);
+    font-variation-settings: "opsz" 144, "SOFT" 20, "wght" 700;
+    font-size: clamp(4rem, 13vw, 9rem);
+    line-height: 0.9;
+    color: var(--yellow);
+  }
+  .fog-wait {
+    margin-top: 18px;
+    font-family: var(--f-body);
+    font-size: clamp(0.8rem, 1.1vw, 0.95rem);
+    font-weight: 700;
+    letter-spacing: 0.34em; text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.9);
+  }
+  .fog-wait .dots { color: var(--yellow); }
+
+  @media (max-width: 900px) {
+    .fog-img { object-position: 78% center; }
+    .fog-scrim {
+      background: linear-gradient(to bottom,
+        rgba(6, 22, 50, 0.86) 0%,
+        rgba(6, 22, 50, 0.62) 50%,
+        rgba(6, 22, 50, 0.88) 100%);
+    }
+  }
+
   /* ============ SECTION 8: CONTATO ============ */
   .contato {
     background: var(--cream);
@@ -1639,6 +1719,33 @@
       </div>
     </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION: ENCERRAMENTO / FOGUETE ============ -->
+<section class="foguete" id="foguete">
+  <div class="fog-bg">
+    <picture>
+      <source type="image/avif" srcset="foguete-850.avif 850w" sizes="100vw" />
+      <source type="image/webp" srcset="foguete-850.webp 850w" sizes="100vw" />
+      <img src="foguete.png" alt="" class="fog-img" loading="lazy" decoding="async" />
+    </picture>
+    <div class="fog-scrim"></div>
+    <div class="fog-glow" aria-hidden="true"></div>
+  </div>
+
+  <div class="container fog-inner">
+    <div class="fog-copy">
+      <h2 class="display-heavy reveal">
+        O foguete
+        <span class="line-2">não deu <span class="hc">ré.</span></span>
+      </h2>
+      <p class="fog-sub reveal d1">
+        Ele está se preparando para a maior missão de todas.
+      </p>
+      <div class="fog-year reveal d2">2028</div>
+      <div class="fog-wait reveal d3">Aguardem<span class="dots">...</span></div>
     </div>
   </div>
 </section>
