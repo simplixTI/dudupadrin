@@ -560,46 +560,7 @@
     .res-photo { width: 120px; }
   }
 
-  /* ============ SECTION 5: COMPROMISSOS ============ */
-  .compromissos {
-    background: var(--cream-warm);
-    padding: clamp(100px, 14vw, 180px) 0;
-    position: relative;
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-  }
-
-  .compromissos-header {
-    display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: 60px;
-    align-items: end;
-    margin-bottom: 60px;
-    padding-bottom: 40px;
-    border-bottom: 1px solid var(--line-strong);
-  }
-  .compromissos-header h2 {
-    font-family: var(--f-display);
-    font-weight: 600;
-    font-size: clamp(40px, 5.5vw, 76px);
-    line-height: 1;
-    letter-spacing: -0.03em;
-    color: var(--navy-deep);
-  }
-  .compromissos-header h2 em {
-    font-style: italic;
-    font-variation-settings: "opsz" 144, "SOFT" 100, "wght" 400;
-    color: var(--yellow-warm);
-    display: block;
-  }
-  .compromissos-header p {
-    font-size: 17px;
-    line-height: 1.65;
-    color: var(--ink-soft);
-    max-width: 500px;
-    margin-left: auto;
-  }
-
+  /* ============ SECTION: FRENTES (grade reaproveitada em #futuro) ============ */
   .themes {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1274,8 +1235,6 @@
   /* ============ RESPONSIVE ============ */
   @media (max-width: 1024px) {
     .hero-copy { max-width: 100%; }
-    .compromissos-header { grid-template-columns: 1fr; }
-    .compromissos-header p { margin-left: 0; }
     .themes { grid-template-columns: repeat(2, 1fr); }
     .instituto-grid { grid-template-columns: 1fr; gap: 60px; }
     .instituto-visual { max-width: 500px; margin: 0 auto; }
