@@ -616,211 +616,6 @@
   }
   .theme:hover::after { width: 100%; }
 
-  /* ============ SECTION 6: INSTITUTO ABREU ============ */
-  .instituto {
-    background: var(--cream);
-    padding: clamp(100px, 14vw, 180px) 0;
-    position: relative;
-    overflow: hidden;
-  }
-  .instituto::before {
-    content: "";
-    position: absolute;
-    top: 60px; left: -100px;
-    width: 500px; height: 500px;
-    background: radial-gradient(circle, rgba(18, 48, 95, 0.06), transparent 65%);
-  }
-
-  .instituto-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-  }
-
-  .instituto-visual {
-    position: relative;
-    aspect-ratio: 4/5;
-    background: linear-gradient(135deg, var(--navy-mid), var(--navy-deep));
-    border-radius: 6px;
-    overflow: hidden;
-    display: grid;
-    place-items: center;
-    color: rgba(255,255,255,0.5);
-  }
-  .instituto-visual::before {
-    content: "";
-    position: absolute; inset: 0;
-    background:
-      radial-gradient(400px 300px at 30% 20%, rgba(255,209,0,0.15), transparent 60%),
-      radial-gradient(400px 300px at 80% 80%, rgba(18,48,95,0.8), transparent 60%);
-  }
-  .instituto-visual::after {
-    content: "";
-    position: absolute; inset: 0;
-    background-image:
-      linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
-    background-size: 40px 40px;
-  }
-  .instituto-visual-content {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    color: rgba(255,255,255,0.85);
-    padding: 40px;
-  }
-  .instituto-visual-content .logo-abreu {
-    font-family: var(--f-display);
-    font-weight: 700;
-    font-size: 48px;
-    letter-spacing: -0.02em;
-    line-height: 1;
-    color: #fff;
-    margin-bottom: 12px;
-  }
-  .instituto-visual-content .logo-abreu em {
-    font-style: italic;
-    color: var(--yellow);
-    font-variation-settings: "opsz" 144, "SOFT" 100, "wght" 400;
-  }
-  .instituto-visual-content .logo-sub {
-    font-size: 11px;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.55);
-    font-weight: 700;
-  }
-  .instituto-visual-img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center center;
-    z-index: 1;
-  }
-  .instituto-visual .frame-corner {
-    position: absolute;
-    width: 30px; height: 30px;
-    border: 2px solid var(--yellow);
-    z-index: 2;
-  }
-  .instituto-visual .fc-tl { top: 20px; left: 20px; border-right: 0; border-bottom: 0; }
-  .instituto-visual .fc-tr { top: 20px; right: 20px; border-left: 0; border-bottom: 0; }
-  .instituto-visual .fc-bl { bottom: 20px; left: 20px; border-right: 0; border-top: 0; }
-  .instituto-visual .fc-br { bottom: 20px; right: 20px; border-left: 0; border-top: 0; }
-
-  .instituto-content .eyebrow { margin-bottom: 20px; display: block; }
-  .instituto-content h2 {
-    font-family: var(--f-display);
-    font-weight: 600;
-    font-size: clamp(40px, 5vw, 68px);
-    line-height: 1;
-    letter-spacing: -0.03em;
-    color: var(--navy-deep);
-    margin-bottom: 12px;
-  }
-  .instituto-content h2 em {
-    display: block;
-    font-style: italic;
-    color: var(--yellow-warm);
-    font-variation-settings: "opsz" 144, "SOFT" 100, "wght" 400;
-  }
-  .instituto-content .lede {
-    font-size: 18px;
-    line-height: 1.65;
-    color: var(--ink-soft);
-    margin: 28px 0 40px;
-  }
-
-  .instituto-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    padding: 28px 0;
-    margin-bottom: 32px;
-    border-top: 1px solid var(--line-strong);
-    border-bottom: 1px solid var(--line-strong);
-  }
-  .instituto-stats div .n {
-    font-family: var(--f-display);
-    font-weight: 700;
-    font-size: 40px;
-    color: var(--navy-deep);
-    line-height: 1;
-    display: block;
-    margin-bottom: 6px;
-    letter-spacing: -0.02em;
-  }
-  .instituto-stats div .n small {
-    font-size: 20px;
-    color: var(--yellow-warm);
-    font-weight: 700;
-  }
-  .instituto-stats div .l {
-    font-size: 11px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--muted);
-    font-weight: 700;
-  }
-
-  .btn-dark {
-    background: var(--navy-deep);
-    color: #fff;
-  }
-  .btn-dark:hover {
-    background: var(--yellow);
-    color: var(--navy-deep);
-    transform: translateY(-2px);
-  }
-
-  .instituto-actions {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    flex-wrap: wrap;
-  }
-  .instituto-phone {
-    display: inline-flex;
-    align-items: center;
-    gap: 14px;
-    padding: 10px 4px;
-    color: var(--navy-deep);
-    transition: transform 0.25s;
-  }
-  .instituto-phone:hover { transform: translateX(3px); }
-  .instituto-phone .ph-icon {
-    width: 42px; height: 42px;
-    border-radius: 50%;
-    background: var(--yellow);
-    display: grid; place-items: center;
-    color: var(--navy-deep);
-    flex-shrink: 0;
-  }
-  .instituto-phone .ph-icon svg { width: 18px; height: 18px; }
-  .instituto-phone small {
-    display: block;
-    font-size: 10px;
-    letter-spacing: 0.24em;
-    text-transform: uppercase;
-    color: var(--muted);
-    font-weight: 700;
-    margin-bottom: 2px;
-  }
-  .instituto-phone strong {
-    display: block;
-    font-family: var(--f-display);
-    font-weight: 700;
-    font-size: 20px;
-    color: var(--navy-deep);
-    letter-spacing: -0.01em;
-    line-height: 1;
-  }
-
   /* ============ SECTION: PROJETO 2028 ============ */
   .fut-header { max-width: 900px; margin-bottom: clamp(44px, 6vw, 72px); }
   .fut-header h2 {
@@ -1205,8 +1000,6 @@
   @media (max-width: 1024px) {
     .hero-copy { max-width: 100%; }
     .themes { grid-template-columns: repeat(2, 1fr); }
-    .instituto-grid { grid-template-columns: 1fr; gap: 60px; }
-    .instituto-visual { max-width: 500px; margin: 0 auto; }
     .contato-grid { grid-template-columns: 1fr; gap: 60px; }
     .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
   }
@@ -1220,7 +1013,6 @@
     .nav.scrolled .brand-logo { height: 30px; }
     .hero-overlay { padding-top: 100px; }
     .themes { grid-template-columns: 1fr; }
-    .instituto-stats { grid-template-columns: 1fr; gap: 16px; }
     .contato-form { padding: 32px 24px; }
     .footer-top { grid-template-columns: 1fr; gap: 40px; padding-bottom: 40px; }
     .footer-bottom { flex-direction: column; align-items: flex-start; text-align: left; }
@@ -1250,7 +1042,6 @@
     <ul class="nav-links">
       <li><a href="#resultados">Resultados</a></li>
       <li><a href="#aliancas">Alianças</a></li>
-      <li><a href="#instituto">Instituto Abreu</a></li>
       <li><a href="#futuro">2028</a></li>
       <li><a href="#contato">Fale Conosco</a></li>
     </ul>
@@ -1444,69 +1235,6 @@
 </section>
 
 <!-- ============ SECTION: COMPROMISSOS ============ -->
-
-<!-- ============ SECTION: INSTITUTO ABREU ============ -->
-<section class="instituto" id="instituto">
-  <div class="container">
-    <div class="instituto-grid">
-      <div class="instituto-visual reveal">
-        <img src="abreu.png" alt="Instituto Abreu — Abrir caminhos através da cultura, do esporte e do conhecimento" class="instituto-visual-img" />
-        <span class="frame-corner fc-tl"></span>
-        <span class="frame-corner fc-tr"></span>
-        <span class="frame-corner fc-bl"></span>
-        <span class="frame-corner fc-br"></span>
-      </div>
-
-      <div class="instituto-content">
-        <span class="eyebrow reveal">Instituto Abreu</span>
-        <h2 class="reveal d1">
-          Política passa por eleição.
-          <em>Propósito acontece todos os dias.</em>
-        </h2>
-        <p class="lede reveal d2">
-          O Instituto Abreu é o braço social e comunitário dessa trajetória.
-          Nosso propósito: <strong>abrir caminhos através da cultura, do esporte
-          e do conhecimento.</strong> Nenhum projeto real depende de mandato, nem
-          de período eleitoral — o trabalho por São João de Meriti continua
-          acontecendo todos os dias, o ano inteiro.
-        </p>
-
-        <div class="instituto-stats reveal d2">
-          <div>
-            <span class="n">—</span>
-            <span class="l">Pessoas atendidas</span>
-          </div>
-          <div>
-            <span class="n">—</span>
-            <span class="l">Projetos ativos</span>
-          </div>
-          <div>
-            <span class="n">—</span>
-            <span class="l">Bairros alcançados</span>
-          </div>
-        </div>
-
-        <div class="instituto-actions reveal d3">
-          <a href="https://wa.me/5521980603535" target="_blank" rel="noopener" class="btn btn-dark">
-            Conheça o Instituto Abreu
-            <span class="arrow">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </span>
-          </a>
-          <a href="https://wa.me/5521980603535" target="_blank" rel="noopener" class="instituto-phone">
-            <span class="ph-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-            </span>
-            <span>
-              <small>Fale direto</small>
-              <strong>+55 21 98060-3535</strong>
-            </span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ============ SECTION: 2028 (FUTURO) ============ -->
 <section class="futuro sec-cream" id="futuro">
@@ -1716,7 +1444,7 @@
             </span>
             <div class="txt">
               <strong>+55 21 98060-3535</strong>
-              <small>WhatsApp · Instituto Abreu</small>
+              <small>Fale com a equipe</small>
             </div>
             <span class="arrow-icon">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
@@ -1767,7 +1495,6 @@
         <ul>
           <li><a href="#resultados">Resultados</a></li>
           <li><a href="#aliancas">Alianças</a></li>
-          <li><a href="#instituto">Instituto Abreu</a></li>
           <li><a href="#contato">Fale Conosco</a></li>
         </ul>
       </div>
@@ -1775,7 +1502,6 @@
       <div>
         <h5>Institucional</h5>
         <ul>
-          <li><a href="#instituto">Instituto Abreu</a></li>
           <li><a href="#futuro">Rumo a 2028</a></li>
           <li><a href="#contato">Imprensa</a></li>
         </ul>
@@ -1785,7 +1511,7 @@
         <h5>Redes</h5>
         <ul>
           <li><a href="https://instagram.com/dudupadrinho" target="_blank" rel="noopener">Instagram ↗</a></li>
-          <li><a href="https://wa.me/5521980603535" target="_blank" rel="noopener">WhatsApp · Instituto</a></li>
+          <li><a href="https://wa.me/5521980603535" target="_blank" rel="noopener">WhatsApp</a></li>
           <li><a href="#contato">E-mail direto</a></li>
         </ul>
       </div>
